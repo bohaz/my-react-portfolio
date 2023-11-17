@@ -1,25 +1,30 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import About from './components/About';
-import { ThemeProvider } from './components/ThemeContext'; 
-import GreetingSection from './components/GreetingSection';
+import Header from './components/sections/Header';
+import { ThemeProvider } from './components/dark-mode/ThemeContext'; 
+import GreetingSection from './components/sections/GreetingSection';
 import ProjectsCarousel from './components/ProjectsCarousel';
-
+import About from './components/sections/About';
+import Contact from './components/sections/Contact';
+import { Box } from '@mui/material';
 
 function App() {
   return (
     <ThemeProvider>
-    <Router>
       <Header />
-      <GreetingSection />
-      <ProjectsCarousel />
-      <Routes>
-        <Route path="/about" element={<About />} />
-        {/* Define otras rutas utilizando el atributo `element` */}
-      </Routes>
-    </Router>
+      <Box
+        sx={{
+          overflowY: 'scroll',
+          height: '100vh',
+          width: '100vw',
+          scrollSnapType: 'y mandatory'
+        }}
+      >
+        <GreetingSection id="greetings" />
+        <ProjectsCarousel id="projects" />
+        <About id="about" />
+        <Contact id="contact" />
+      </Box>
     </ThemeProvider>
   );
 }
