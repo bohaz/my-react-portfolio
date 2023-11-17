@@ -1,14 +1,25 @@
 import React from 'react';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Chip } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Chip } from '@mui/material';
 
-function ProjectCard({ title, description, imageUrl, liveUrl, sourceUrl, technologies }) {
+function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
   const cardStyle = {
     width: '350px',
-    height: '350px',
+    height: 'auto',
     borderRadius: '20px',
-    borderColor: '#e3e3e3',
     transition: 'transform 0.3s ease-in-out',
-    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)' 
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)'
+  };
+
+  const buttonStyle = {
+    width: '50%', // Ancho del botón
+    margin: '0 auto', // Centrar el botón
+    display: 'block', // Hacer que ocupe su propia línea
+    backgroundColor: '#007bff', // Color de fondo
+    color: 'white',
+    // Color del texto
+    '&:hover': {
+      backgroundColor: '#0056b3', // Color de fondo al pasar el ratón por encima
+    },
   };
 
   return (
@@ -17,34 +28,25 @@ function ProjectCard({ title, description, imageUrl, liveUrl, sourceUrl, technol
         onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
       >
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="200"
-            image={imageUrl}
-            alt={`Imagen de ${title}`}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {description}
-            </Typography>
-            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '10px' }}>
-  {technologies && technologies.map((tech, index) => (
-    <Chip key={index} label={tech} variant="outlined" />
-  ))}
-</div>
-            
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary" href={liveUrl} target="_blank">
-            See Live
-          </Button>
-          <Button size="small" color="primary" href={sourceUrl} target="_blank">
-            See Source
+        <CardMedia
+          component="img"
+          height="200"
+          image={imageUrl}
+          alt={`Image of ${title}`}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '10px' }}>
+            {technologies && technologies.map((tech, index) => (
+              <Chip key={index} label={tech} variant="outlined" />
+            ))}
+          </div>
+        </CardContent>
+        <CardActions style={{ justifyContent: 'center' }}>
+        <Button style={buttonStyle} onClick={() => onDetailsClick({ title, imageUrl, technologies })}>
+            See Details
           </Button>
         </CardActions>
       </Card>
