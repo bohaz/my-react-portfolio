@@ -1,13 +1,27 @@
-import React, { Component } from "react";
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import ProjectCard from './ProjectCard'; 
+import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../components/Cards.css';
+import Box from '@mui/material/Box';
 
-export default class ProjectsCarousel extends Component {
-  render() {
-    var settings = {
+function ProjectsCarousel() {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState({});
+  const sectionRef = useRef(null);
+
+  const handleDetailsClick = (project) => {
+    setSelectedProject(project);
+    setDialogOpen(true);
+  };
+
+  const handleClose = () => {
+    setDialogOpen(false);
+  };
+
+    const settings = {
         speed: 500,
         slidesToShow: 2,  
         slidesToScroll: 1,
@@ -75,16 +89,16 @@ export default class ProjectsCarousel extends Component {
         sourceUrl: 'https://github.com/bohaz/todo-react',
       },
       {
-        title: 'Proyecto 5',
-        description: 'Descripción del Proyecto 1',
+        title: 'Project 5',
+        description: 'Descriptión',
         imageUrl: '/path/to/image1.jpg',
         technologies: ['Ruby', 'Rails', 'CSS3'],
         liveUrl: 'http://liveurl1.com',
         sourceUrl: 'http://sourceurl1.com',
       },
       {
-        title: 'Proyecto 6',
-        description: 'Descripción del Proyecto 1',
+        title: 'Project 6',
+        description: 'Descriptión',
         imageUrl: '/path/to/image1.jpg',
         technologies: ['Ruby', 'Rails', 'CSS3'],
         liveUrl: 'http://liveurl1.com',
@@ -93,8 +107,16 @@ export default class ProjectsCarousel extends Component {
     ];
 
     return (
+      <Box 
+      ref={sectionRef} 
+      sx={{ 
+        p: 4, 
+        height: '100vh', 
+        scrollSnapAlign: 'start' 
+      }}
+    >
       <div className="cards-container">
-        <h2>My Recent Works</h2>
+        <h2 className="works-title">My Recent Works</h2>
         <Slider {...settings}>
           {projects.map((project, index) => (
             <div key={index}>
@@ -103,13 +125,19 @@ export default class ProjectsCarousel extends Component {
                 description={project.description}
                 imageUrl={project.imageUrl}
                 technologies={project.technologies}
-                liveUrl={project.liveUrl}
-                sourceUrl={project.sourceUrl}
+                onDetailsClick={() => handleDetailsClick(project)}
               />
             </div>
           ))}
         </Slider>
+        <ProjectDetailsDialog
+          open={dialogOpen}
+          handleClose={handleClose}
+          project={selectedProject}
+        />
       </div>
+    </Box>
     );
   }
-}
+  
+  export default ProjectsCarousel;
