@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
-
 function MobileMenu() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -27,16 +26,15 @@ function MobileMenu() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      {/* Botón para cerrar el Drawer */}
       <IconButton
         sx={{ position: 'absolute', top: 0, right: 0 }}
         onClick={toggleDrawer(false)}
       >
-         <FontAwesomeIcon icon={faRectangleXmark} />
+        <FontAwesomeIcon icon={faRectangleXmark} />
       </IconButton>
       <List>
-        {['Projects', 'About', 'Contact'].map((text) => (
-          <ListItem button key={text}>
+        {['Home','Projects', 'About', 'Contact'].map((text) => (
+          <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
         ))}

@@ -7,19 +7,15 @@ function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
     height: 'auto',
     borderRadius: '20px',
     transition: 'transform 0.3s ease-in-out',
-    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)'
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
   };
 
   const buttonStyle = {
-    width: '50%', // Ancho del botón
-    margin: '0 auto', // Centrar el botón
-    display: 'block', // Hacer que ocupe su propia línea
-    backgroundColor: '#007bff', // Color de fondo
+    width: '50%', 
+    margin: '0 auto', 
+    display: 'block', 
+    backgroundColor: '#007bff', 
     color: 'white',
-    // Color del texto
-    '&:hover': {
-      backgroundColor: '#0056b3', // Color de fondo al pasar el ratón por encima
-    },
   };
 
   return (

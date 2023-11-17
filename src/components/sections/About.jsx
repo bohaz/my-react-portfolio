@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
-function About() {
+function About({ id }) {
   const resumeLink = 'https://drive.google.com/file/d/1oRUt0Y3M4pCiIpnbADB5B5RozaugBD8F/view?usp=sharing';
-  const sectionRef = useRef(null);
+  
 
   const iconBoxStyle = {
     width: 60,
@@ -32,15 +32,9 @@ function About() {
   ];
 
   return (
-    <Box 
-    ref={sectionRef} 
-    sx={{ 
-      p: 4, 
-      height: '100vh', // Asegura que la sección tenga la altura correcta
-      scrollSnapAlign: 'start' // Asegura el snap para esta sección
-    }}
-  >
-    <Box sx={{ p: 4 }}>
+   
+    <Box id={id} sx={{ p: 4, minHeight: '100vh', justifyContent: 'center', 
+    alignItems: 'center' }}>
       <Grid container spacing={2}>
         {/* About Me Section */}
         <Grid item xs={12} md={6} sx={{ borderRight: 1, borderColor: 'grey.300' }}>
@@ -77,7 +71,7 @@ function About() {
         </Grid>
       </Grid>
     </Box>
-    </Box>
+ 
   );
 }
 

@@ -1,16 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import ProjectCard from './ProjectCard'; 
 import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../components/Cards.css';
-import Box from '@mui/material/Box';
 
-function ProjectsCarousel() {
+
+function ProjectsCarousel({ id }) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
-  const sectionRef = useRef(null);
+  
 
   const handleDetailsClick = (project) => {
     setSelectedProject(project);
@@ -107,15 +107,8 @@ function ProjectsCarousel() {
     ];
 
     return (
-      <Box 
-      ref={sectionRef} 
-      sx={{ 
-        p: 4, 
-        height: '100vh', 
-        scrollSnapAlign: 'start' 
-      }}
-    >
-      <div className="cards-container">
+    
+      <div id={id} className="cards-container">
         <h2 className="works-title">My Recent Works</h2>
         <Slider {...settings}>
           {projects.map((project, index) => (
@@ -136,7 +129,7 @@ function ProjectsCarousel() {
           project={selectedProject}
         />
       </div>
-    </Box>
+
     );
   }
   

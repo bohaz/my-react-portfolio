@@ -4,9 +4,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
+import imageSrc from '../../assets/redes.png'; // Ajusta la ruta según la estructura de tu proyecto
 
 
-function GreetingSection() {
+
+function GreetingSection({ id }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -45,17 +47,21 @@ function GreetingSection() {
     color: '#333', 
   }; 
 
+  const boxStyle = {
+    padding: '2rem', 
+    height: '100vh',
+  };
+
+  const textStyle = {
+    fontWeight: 'bold',
+    marginBottom: '1rem', 
+  };
+  
+
   return (
-    <Box 
-    ref={sectionRef} 
-    sx={{ 
-      p: 4, 
-      height: '100vh', 
-      scrollSnapAlign: 'start' 
-    }}
-  >
-<Box ref={sectionRef} sx={{ p: 4 }}>
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
+ 
+    <Box id={id} ref={sectionRef} sx={{ ...boxStyle, position: 'relative' }}>
+    <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={2} order={{ xs: 2, md: 1 }} sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' }, alignItems: 'center', justifyContent: 'center' }}>
           
           <Box sx={iconBoxStyle}>
@@ -79,7 +85,7 @@ function GreetingSection() {
         
         </Grid>
         <Grid item xs={12} md={10} order={{ xs: 1, md: 2 }} textAlign="left">
-          <Typography variant="h4" component="h1" gutterBottom className="animate">
+          <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
             Hey There.
           </Typography>
       <Typography variant="h5" component="h2" gutterBottom className="animate">
@@ -96,10 +102,13 @@ function GreetingSection() {
         don’t hesitate to contact me.
       </Typography>
       </Grid>
+      <Grid item xs={12} md={6} order={{ xs: 3, md: 3 }} sx={{ display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 0 } }}>
+        <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
+      </Grid>
       </Grid>
 
     </Box>
-    </Box>
+   
   );
 }
 

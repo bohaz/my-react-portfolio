@@ -61,11 +61,11 @@ export default function PortfolioAppBar() {
   const { toggleColorMode } = useTheme();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <MobileMenu />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -74,6 +74,9 @@ export default function PortfolioAppBar() {
           </Typography>
           {/* Botones ocultos en pantallas pequeñas */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <a href="#home" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit">Home</Button>
+            </a>
             <a href="#projects" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Button color="inherit">Portfolio</Button>
             </a>
