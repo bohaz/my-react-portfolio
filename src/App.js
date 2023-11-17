@@ -6,25 +6,21 @@ import GreetingSection from './components/sections/GreetingSection';
 import ProjectsCarousel from './components/ProjectsCarousel';
 import About from './components/sections/About';
 import Contact from './components/sections/Contact';
-import { Box } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import Footer from './components/sections/Footer';
+
 
 function App() {
   return (
     <ThemeProvider>
       <Header />
-      <Box
-        sx={{
-          overflowY: 'scroll',
-          height: '100vh',
-          width: '100vw',
-          scrollSnapType: 'y mandatory'
-        }}
-      >
-        <GreetingSection id="greetings" />
+      <Toolbar /> 
+        <GreetingSection id="home" />
         <ProjectsCarousel id="projects" />
         <About id="about" />
         <Contact id="contact" />
-      </Box>
+        <Footer />
+    
     </ThemeProvider>
   );
 }
