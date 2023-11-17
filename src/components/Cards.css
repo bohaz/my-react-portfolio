@@ -1,22 +1,21 @@
 .slick-prev::before,
 .slick-next::before {
-  color: lightslategray;
+  color: rgb(108, 163, 235);
   font-size: 60px;
 }
 
 .slick-prev {
-  left: -4%;
+  left: -10%;
   z-index: 1;
 }
 
 .slick-next {
-  right: -1%;
+  right: -4%;
 }
 
 .cards-container {
-  padding: 0 5%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /* Cards.css */
@@ -40,3 +39,22 @@
   opacity: 0; /* Inicialmente oculto */
   animation: slideInLeftToRight 0.5s ease forwards;
 }
+
+.works-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  
+}
+
+.icon-animate {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-out;
+}
+
+.icon-animate.slide-in-left-to-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
