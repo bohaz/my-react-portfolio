@@ -5,16 +5,25 @@ function Contact({ id }) {
   return (
     <Box id={id} sx={{ 
       p: 4, 
-      minHeight: '100vh', 
       display: 'flex', 
       flexDirection: 'column', 
       justifyContent: 'center', 
       alignItems: 'center', 
     }}>
-      <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ mb: 2, fontWeight: 'bold' }}>
-        Contact
-      </Typography>
-      <Typography variant="h6" component="p" gutterBottom textAlign="center" sx={{ mb: 3 }}>
+      
+      <Typography 
+  variant="h4" 
+  component="p" 
+  gutterBottom 
+  textAlign="center" 
+  sx={{ 
+    mb: 3, 
+    fontWeight: 'bold', 
+    color: '#333', 
+    width: { xs: '100%', md: '50%' }, 
+    fontSize: { xs: 'h5.fontSize', md: 'h4.fontSize' }, 
+  }}
+>
         I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.
       </Typography>
       <form action="https://formspree.io/f/xyyaoqnq" method="POST" style={{ width: '100%', maxWidth: '600px' }}>
@@ -52,7 +61,11 @@ function Contact({ id }) {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary" sx={{ width: '100%', padding: '10px', borderRadius: '20px', fontWeight: 'bold' }}>
+            <Button type="submit" variant="contained" color="primary" sx={{ width: '100%', padding: '10px', borderRadius: '20px', fontWeight: 'bold', '&:hover': {
+      backgroundColor: 'white', 
+      color: 'primary.main',
+      
+    } }}>
               Get In Touch
             </Button>
           </Grid>

@@ -11,6 +11,13 @@ const Transition = React.forwardRef((props, ref) => {
 function ProjectDetailsDialog({ open, handleClose, project }) {
   const hasProjectData = project && project.title;
 
+  const chipStyle = {
+    borderRadius: '5px', 
+    backgroundColor: 'rgba(128, 128, 128, 0.2)', 
+    fontWeight: 'bold',
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+  };
+
   return (
     <Dialog
       open={open}
@@ -18,6 +25,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
       keepMounted
       onClose={handleClose}
       aria-describedby="project-details-description"
+      sx={{ '& .MuiDialog-paper': { borderRadius: '20px' } }}
     >
       {hasProjectData && (
         <>
@@ -45,7 +53,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
             />
             <DialogContentText id="project-details-description">
               {project.technologies.map((tech, index) => (
-                <Chip key={index} label={tech} variant="outlined" style={{ margin: '5px' }} />
+                <Chip key={index} label={tech} variant="outlined" style={{ margin: '5px' }} sx={chipStyle} />
               ))}
             </DialogContentText>
           </DialogContent>
@@ -53,14 +61,15 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
           <Button 
   href={project.liveUrl} 
   target="_blank"
-  style={{
-    backgroundColor: '#007bff', // Color de fondo
+  sx={{
+    backgroundColor: '#007bff', 
     color: 'white', 
-    width: '20%', // Ancho del botón
-   // Color del texto
-    margin: '5px', // Margen
+    width: '30%', 
+    borderRadius: '20px',
+    margin: '5px',
     '&:hover': {
-      backgroundColor: '#0056b3', // Color de fondo al pasar el ratón por encima
+      backgroundColor: 'white', 
+      color: 'primary.main',
     },
   }}
 >
@@ -70,12 +79,12 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
   href={project.sourceUrl} 
   target="_blank"
   style={{
-    backgroundColor: 'white', // Otro color de fondo
+    backgroundColor: 'white', 
     color: '#007bff',
     
     margin: '5px',
     '&:hover': {
-      backgroundColor: 'white', // Color de fondo al pasar el ratón por encima
+      backgroundColor: 'white',
     },
   }}
 >

@@ -4,9 +4,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
-import imageSrc from '../../assets/redes.png'; // Ajusta la ruta según la estructura de tu proyecto
-
-
+import imageSrc from '../../assets/redes.png'; 
 
 function GreetingSection({ id }) {
   const sectionRef = useRef(null);
@@ -30,12 +28,11 @@ function GreetingSection({ id }) {
   }, []);
 
   const iconBoxStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     width: 50,
     height: 50,
+    borderRadius: '20%',
     margin: '5px',
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     transition: 'transform 0.3s ease-in-out', 
 
     '&:hover': {
@@ -49,14 +46,15 @@ function GreetingSection({ id }) {
 
   const boxStyle = {
     padding: '2rem', 
-    height: '100vh',
+    marginTop: '4%', 
   };
 
   const textStyle = {
     fontWeight: 'bold',
-    marginBottom: '1rem', 
+    marginBottom: '1rem',
+    color: 'primary.main', 
+    
   };
-  
 
   return (
  
@@ -88,10 +86,10 @@ function GreetingSection({ id }) {
           <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
             Hey There.
           </Typography>
-      <Typography variant="h5" component="h2" gutterBottom className="animate">
+      <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
         I’m Ricardo.
       </Typography>
-      <Typography variant="h6" component="h3" gutterBottom className="animate">
+      <Typography variant="h5" component="h3" gutterBottom className="animate">
         I'm a Software Developer
       </Typography>
       <Typography paragraph className="animate">

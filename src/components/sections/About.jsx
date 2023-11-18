@@ -11,7 +11,14 @@ function About({ id }) {
   const iconBoxStyle = {
     width: 60,
     height: 60,
+    borderRadius: '20%',
     margin: '10px',
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
+    transition: 'transform 0.3s ease-in-out', 
+
+    '&:hover': {
+      transform: 'scale(1.2)', 
+    },
   };
 
   const skillIcons = [
@@ -34,11 +41,11 @@ function About({ id }) {
   return (
    
     <Box id={id} sx={{ p: 4, minHeight: '100vh', justifyContent: 'center', 
-    alignItems: 'center' }}>
+    alignItems: 'center', paddingTop: '10%' }}>
       <Grid container spacing={2}>
         {/* About Me Section */}
         <Grid item xs={12} md={6} sx={{ borderRight: 1, borderColor: 'grey.300' }}>
-          <Typography variant="h4" component="h2" gutterBottom textAlign="center">
+          <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }} >
             About Me
           </Typography>
           <Typography variant="h6" component="p" gutterBottom textAlign="center">
@@ -50,15 +57,38 @@ function About({ id }) {
             hesitate to contact me.
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', mt: 2 }}>
-            <Button variant="contained" color="primary" href={resumeLink} target="_blank">
-              Get My Resume
-            </Button>
+            
+          <Button 
+  sx={{
+    textAlign: 'center',
+    padding: '10px',
+    fontWeight: 'bold',
+    width: '50%', 
+    margin: '0 auto', 
+    display: 'block', 
+    backgroundColor: 'primary.main', 
+    color: 'white',
+    borderRadius: '20px',
+    '&:hover': {
+      backgroundColor: 'white', 
+      color: 'primary.main', 
+     
+    },
+  }}
+  variant="contained" 
+  color="primary" 
+  href={resumeLink} 
+  target="_blank"
+>
+  Get My Resume
+</Button>
+
           </Box>
         </Grid>
 
         {/* My Stack Section */}
         <Grid item xs={12} md={6} sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <Typography variant="h4" component="h2" gutterBottom>
+          <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold' }} >
             My Stack
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -21,18 +21,18 @@ class Header extends Component {
   handleScroll = () => {
     const { lastScrollY } = this.state; 
     const currentScrollY = window.scrollY;
-    const threshold = 50; // Umbral de desplazamiento, ajustable según tus necesidades
+    const threshold = 50; 
   
     if (Math.abs(currentScrollY - lastScrollY) < threshold) {
-      // No hacer nada si el cambio en el desplazamiento es menor que el umbral
+      
       return;
     }
   
     if (currentScrollY > lastScrollY) {
-      // Desplazando hacia abajo
+      
       this.setState({ showHeader: false });
     } else {
-      // Desplazando hacia arriba
+      
       this.setState({ showHeader: true });
     }
     this.setState({ lastScrollY: currentScrollY });

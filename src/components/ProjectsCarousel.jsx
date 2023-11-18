@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../components/Cards.css';
+import '../components/styles/Cards.css';
 
 
 function ProjectsCarousel({ id }) {
@@ -23,7 +23,7 @@ function ProjectsCarousel({ id }) {
 
     const settings = {
         speed: 500,
-        slidesToShow: 2,  
+        slidesToShow: 1,  
         slidesToScroll: 1,
         
         responsive: [
@@ -41,7 +41,8 @@ function ProjectsCarousel({ id }) {
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              initialSlide: 2
+              initialSlide: 2,
+              dots: true
             }
           },
           {
@@ -49,7 +50,8 @@ function ProjectsCarousel({ id }) {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              arrows:false
+              arrows:false,
+              dots: true
             }
           }
         ]

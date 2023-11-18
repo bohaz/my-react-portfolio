@@ -74,9 +74,6 @@ export default function PortfolioAppBar() {
           </Typography>
           {/* Botones ocultos en pantallas pequeñas */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <a href="#home" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color="inherit">Home</Button>
-            </a>
             <a href="#projects" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Button color="inherit">Portfolio</Button>
             </a>

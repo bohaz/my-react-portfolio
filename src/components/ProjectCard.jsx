@@ -7,15 +7,17 @@ function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
     height: 'auto',
     borderRadius: '20px',
     transition: 'transform 0.3s ease-in-out',
-    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
+    margin: '15px',
   };
 
-  const buttonStyle = {
-    width: '50%', 
-    margin: '0 auto', 
-    display: 'block', 
-    backgroundColor: '#007bff', 
-    color: 'white',
+  
+
+  const chipStyle = {
+    borderRadius: '5px', 
+    backgroundColor: 'rgba(128, 128, 128, 0.2)', 
+    fontWeight: 'bold',
+    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
   };
 
   return (
@@ -36,12 +38,23 @@ function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
           </Typography>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '10px' }}>
             {technologies && technologies.map((tech, index) => (
-              <Chip key={index} label={tech} variant="outlined" />
+              <Chip key={index} label={tech} variant="outlined" sx={chipStyle} />
             ))}
           </div>
         </CardContent>
         <CardActions style={{ justifyContent: 'center' }}>
-        <Button style={buttonStyle} onClick={() => onDetailsClick({ title, imageUrl, technologies })}>
+        <Button   sx={{
+    width: '50%', 
+    margin: '0 auto', 
+    display: 'block', 
+    backgroundColor: 'primary.main', 
+    color: 'white',
+    borderRadius: '20px',
+    '&:hover': {
+      backgroundColor: 'white', 
+      color: 'primary.main',
+    },
+  }} onClick={() => onDetailsClick({ title, imageUrl, technologies })}>
             See Details
           </Button>
         </CardActions>
