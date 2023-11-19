@@ -63,8 +63,8 @@ function ProjectsCarousel({ id }) {
         description: '24hour doctor is a modern and dynamic web application designed to manage and display a directory of doctors and their reservations.',
         imageUrl: require('../assets/Captura de pantalla (128).png'),
         technologies: ['Rails', 'React', 'Redux', 'CSS3'],
-        liveUrl: 'http://liveurl1.com',
-        sourceUrl: 'http://sourceurl1.com',
+        liveUrl: 'https://two4hours-doctor-frontend.onrender.com/',
+        sourceUrl: 'https://github.com/bohaz/24hour_doctor-front_end',
       },
       {
         title: 'TransactTrends',
@@ -89,22 +89,6 @@ function ProjectsCarousel({ id }) {
         technologies: ['React', 'Javascript', 'Bootstrap'],
         liveUrl: 'https://todo-react-xktv.onrender.com/',
         sourceUrl: 'https://github.com/bohaz/todo-react',
-      },
-      {
-        title: 'Project 5',
-        description: 'Descriptión',
-        imageUrl: '/path/to/image1.jpg',
-        technologies: ['Ruby', 'Rails', 'CSS3'],
-        liveUrl: 'http://liveurl1.com',
-        sourceUrl: 'http://sourceurl1.com',
-      },
-      {
-        title: 'Project 6',
-        description: 'Descriptión',
-        imageUrl: '/path/to/image1.jpg',
-        technologies: ['Ruby', 'Rails', 'CSS3'],
-        liveUrl: 'http://liveurl1.com',
-        sourceUrl: 'http://sourceurl1.com',
       },
     ];
 
