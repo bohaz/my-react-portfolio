@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
 function About({ id }) {
-  const resumeLink = 'https://drive.google.com/file/d/1P8EYdS-_yoM2ahBR06PfdjL99d86u6bA/view?usp=sharing';
+  const resumeLink = 'https://drive.google.com/file/d/1qHPA9AZ4Dv35ZJaH3WvkQZ7wLK2IDwuF/view?usp=sharing';
   
 
   const iconBoxStyle = {
