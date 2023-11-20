@@ -4,10 +4,22 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
+import { motion } from 'framer-motion';
 import imageSrc from '../../assets/redes.png'; 
 
 function GreetingSection({ id }) {
   const sectionRef = useRef(null);
+
+  const movingBackgroundVariants = {
+    animate: {
+      x: ["100%", "-100%"], 
+      transition: {
+        duration: 15,
+        ease: "linear",
+        repeat: Infinity
+      }
+    }
+  };
 
   useEffect(() => {
     const currentRef = sectionRef.current;
@@ -58,7 +70,23 @@ function GreetingSection({ id }) {
 
   return (
  
-    <Box id={id} ref={sectionRef} sx={{ ...boxStyle, position: 'relative' }}>
+    <Box id={id} ref={sectionRef} sx={{ ...boxStyle, position: 'relative', overflow: 'hidden' }}>
+      {/* Texto en movimiento */}
+      <motion.div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+          width: 'max-content', 
+          fontSize: '5rem',
+          fontWeight: 'bold',
+          color: 'rgba(0, 0, 0, 0.1)', 
+        }}
+        variants={movingBackgroundVariants}
+        animate="animate"
+      >
+        Full Stack Software Developer
+      </motion.div>
     <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={2} order={{ xs: 2, md: 1 }} sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'column' }, alignItems: 'center', justifyContent: 'center' }}>
           
