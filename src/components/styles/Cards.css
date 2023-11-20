@@ -29,6 +29,12 @@ header {
   right: 28%;
 }
 
+.slick-prev,
+.slick-next {
+  top: -70px; 
+  z-index: 1;
+}
+
 .cards-container {
 
   padding-top: 10%;
@@ -56,7 +62,3 @@ header {
   text-align: center;
   margin-bottom: 2%;
 }
-
-
-
-
