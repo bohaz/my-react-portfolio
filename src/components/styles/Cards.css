@@ -31,12 +31,11 @@ header {
 
 .slick-prev,
 .slick-next {
-  top: -70px; 
+  top: -70px;
   z-index: 1;
 }
 
 .cards-container {
-
   padding-top: 10%;
 }
 
@@ -45,6 +44,7 @@ header {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -52,7 +52,7 @@ header {
 }
 
 .slide-in-left-to-right {
-  opacity: 0; 
+  opacity: 0;
   animation: slideInLeftToRight 0.5s ease forwards;
 }
 

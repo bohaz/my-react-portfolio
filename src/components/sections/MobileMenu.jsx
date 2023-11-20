@@ -40,7 +40,9 @@ function MobileMenu() {
       <List>
         {['Projects', 'About', 'Contact'].map((text, index) => (
           <React.Fragment key={text}>
-            {index > 0 && <Divider />} {/* Añade un divisor entre los elementos */}
+            {index > 0 && <Divider />}
+            {' '}
+            {/* Añade un divisor entre los elementos */}
             <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
               <ListItemText primary={text} />
             </ListItem>
@@ -63,7 +65,7 @@ function MobileMenu() {
         <MenuIcon />
       </IconButton>
       <Drawer
-        anchor='left'
+        anchor="left"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
         sx={{

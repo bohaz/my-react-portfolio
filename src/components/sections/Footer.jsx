@@ -14,8 +14,9 @@ function Footer() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '10px',
-      marginTop: '30px'
-    }}>
+      marginTop: '30px',
+    }}
+    >
       <Box sx={{ '& > *': { margin: 1 } }}>
         <IconButton color="inherit" href="https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/" target="_blank">
           <LinkedInIcon />
@@ -28,7 +29,11 @@ function Footer() {
         </IconButton>
       </Box>
       <Typography variant="body2" sx={{ marginTop: '10px' }}>
-        © {new Date().getFullYear()} Ricardo Martínez - All Rights Reserved
+        ©
+        {' '}
+        {new Date().getFullYear()}
+        {' '}
+        Ricardo Martínez - All Rights Reserved
       </Typography>
     </Box>
   );

@@ -6,7 +6,7 @@ class Header extends Component {
     super(props);
     this.state = {
       showHeader: true,
-      lastScrollY: 0
+      lastScrollY: 0,
     };
   }
 
@@ -19,29 +19,26 @@ class Header extends Component {
   }
 
   handleScroll = () => {
-    const { lastScrollY } = this.state; 
+    const { lastScrollY } = this.state;
     const currentScrollY = window.scrollY;
-    const threshold = 50; 
-  
+    const threshold = 50;
+
     if (Math.abs(currentScrollY - lastScrollY) < threshold) {
-      
       return;
     }
-  
+
     if (currentScrollY > lastScrollY) {
-      
       this.setState({ showHeader: false });
     } else {
-      
       this.setState({ showHeader: true });
     }
     this.setState({ lastScrollY: currentScrollY });
   };
-  
 
   render() {
+    const { showHeader } = this.state;
     return (
-      <header style={{ display: this.state.showHeader ? 'block' : 'none' }}>
+      <header style={{ display: showHeader ? 'block' : 'none' }}>
         <PortfolioAppBar />
       </header>
     );

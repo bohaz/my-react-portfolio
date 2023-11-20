@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import MobileMenu from '../sections/MobileMenu'; 
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import MobileMenu from '../sections/MobileMenu';
 import { useTheme } from '../dark-mode/ThemeContext';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
