@@ -6,6 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Divider from '@mui/material/Divider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,7 +22,11 @@ function MobileMenu() {
 
   const list = () => (
     <Box
-      sx={{ width: 250 }}
+      sx={{
+        width: 250,
+        textAlign: 'center',
+        paddingTop: '10%',
+      }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
@@ -33,10 +38,13 @@ function MobileMenu() {
         <FontAwesomeIcon icon={faRectangleXmark} />
       </IconButton>
       <List>
-        {['Projects', 'About', 'Contact'].map((text) => (
-          <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
-            <ListItemText primary={text} />
-          </ListItem>
+        {['Projects', 'About', 'Contact'].map((text, index) => (
+          <React.Fragment key={text}>
+            {index > 0 && <Divider />} {/* Añade un divisor entre los elementos */}
+            <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
+              <ListItemText primary={text} />
+            </ListItem>
+          </React.Fragment>
         ))}
       </List>
     </Box>
@@ -58,6 +66,12 @@ function MobileMenu() {
         anchor='left'
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        sx={{
+          '& .MuiDrawer-paper': {
+            backgroundColor: '#f7f7f7', // Cambia el color de fondo del Drawer
+            color: '#333', // Cambia el color del texto
+          },
+        }}
       >
         {list()}
       </Drawer>
