@@ -75,7 +75,7 @@ function GreetingSection({ id }) {
       <motion.div
         style={{
           position: 'absolute',
-          top: '50%',
+          top: '20%',
           left: 0,
           width: 'max-content', 
           fontSize: '5rem',

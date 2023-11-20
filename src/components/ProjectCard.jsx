@@ -11,8 +11,6 @@ function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
     margin: '15px',
   };
 
-  
-
   const chipStyle = {
     borderRadius: '5px', 
     backgroundColor: 'rgba(128, 128, 128, 0.2)', 
