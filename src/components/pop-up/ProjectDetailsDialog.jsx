@@ -30,7 +30,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
       {hasProjectData && (
         <>
           <DialogTitle>
-            {project.title}
+            {project.description}
             <IconButton
   aria-label="close"
   onClick={handleClose}
@@ -52,6 +52,8 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
               alt={`Imagen de ${project.title}`}
             />
             <DialogContentText id="project-details-description">
+            
+            
               {project.technologies.map((tech, index) => (
                 <Chip key={index} label={tech} variant="outlined" style={{ margin: '5px' }} sx={chipStyle} />
               ))}
