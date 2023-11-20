@@ -33,7 +33,7 @@ function MobileMenu() {
         <FontAwesomeIcon icon={faRectangleXmark} />
       </IconButton>
       <List>
-        {['Home','Projects', 'About', 'Contact'].map((text) => (
+        {['Projects', 'About', 'Contact'].map((text) => (
           <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
             <ListItemText primary={text} />
           </ListItem>
