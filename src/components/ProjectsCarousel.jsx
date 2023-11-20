@@ -23,7 +23,7 @@ function ProjectsCarousel({ id }) {
 
     const settings = {
         speed: 500,
-        slidesToShow: 1,  
+        slidesToShow: 3,  
         slidesToScroll: 1,
         
         responsive: [
