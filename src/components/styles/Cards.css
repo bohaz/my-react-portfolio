@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  padding: 0.5%;
+  border-radius: 50px;
+  margin-top: 1%;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: rgb(108, 163, 235);
+  font-size: 60px;
+}
+
+.slick-prev {
+  left: 23%;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 28%;
+}
+
+.slick-prev,
+.slick-next {
+  top: -70px;
+  z-index: 1;
+}
+
+.cards-container {
+  padding-top: 10%;
+}
+
+@keyframes slideInLeftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left-to-right {
+  opacity: 0;
+  animation: slideInLeftToRight 0.5s ease forwards;
+}
+
+.works-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2%;
+}

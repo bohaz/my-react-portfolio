@@ -4,11 +4,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import MobileMenu from './MobileMenu'; // Ajusta la ruta según tu estructura
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { useTheme } from './ThemeContext';
+import MobileMenu from '../sections/MobileMenu';
+import { useTheme } from '../dark-mode/ThemeContext';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -61,22 +61,28 @@ export default function PortfolioAppBar() {
   const { toggleColorMode } = useTheme();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <MobileMenu />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            My Portfolio
+            Ricardo Dev
           </Typography>
           {/* Botones ocultos en pantallas pequeñas */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Button color="inherit">Portfolio</Button>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Contact</Button>
+            <a href="#projects" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit">Portfolio</Button>
+            </a>
+            <a href="#about" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit">About</Button>
+            </a>
+            <a href="#contact" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color="inherit">Contact</Button>
+            </a>
           </Box>
           {/* Switch de Modo Oscuro */}
           <FormControlLabel
