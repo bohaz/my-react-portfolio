@@ -3,10 +3,31 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import { motion } from 'framer-motion';
+import Checkbox from '@mui/icons-material/CheckBox';
 
 function About({ id }) {
   const resumeLink = 'https://drive.google.com/file/d/1qHPA9AZ4Dv35ZJaH3WvkQZ7wLK2IDwuF/view?usp=sharing';
   
+  const variants = {
+    visible: i => ({
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        delay: i * 0.3, 
+      },
+    }),
+    hidden: { opacity: 0, translateY: 100 },
+  };
+
+  const skills = [
+    'Database Management',
+    'Version Control',
+    'CLI',
+    'API Design',
+    'Web Development'
+  ];
+
 
   const iconBoxStyle = {
     width: 60,
@@ -40,55 +61,34 @@ function About({ id }) {
 
   return (
    
-    <Box id={id} sx={{ p: 4, minHeight: '100vh', justifyContent: 'center', 
-    alignItems: 'center', paddingTop: '10%' }}>
-      <Grid container spacing={2}>
-        {/* About Me Section */}
-        <Grid item xs={12} md={6} sx={{ borderRight: 1, borderColor: 'grey.300' }}>
+    <Box id={id} sx={{ p: 4, justifyContent: 'center', alignItems: 'center', paddingTop: '10%', pb: '5%' }}>
+    <Grid container spacing={4} justifyContent="center">
+      {/* About Me Section */}
+      <Grid item xs={12} md={4}>
+        <motion.div initial="hidden" whileInView="visible" custom={0} variants={variants}>
           <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }} >
             About Me
           </Typography>
           <Typography variant="h6" component="p" gutterBottom textAlign="center">
-            Hello I’m a software developer! I can help
-            you build a product, feature or website
-            Look through some of my work and
-            experience! If you like what you see and
-            have a project you need coded, don’t
-            hesitate to contact me.
+            Hello I’m a software developer! I can help you build a product, feature or website.
+            Look through some of my work and experience! If you like what you see and have a project
+            you need coded, don’t hesitate to contact me.
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', mt: 2 }}>
-            
-          <Button 
-  sx={{
-    textAlign: 'center',
-    padding: '10px',
-    fontWeight: 'bold',
-    width: '50%', 
-    margin: '0 auto', 
-    display: 'block', 
-    backgroundColor: 'primary.main', 
-    color: 'white',
-    borderRadius: '20px',
-    '&:hover': {
-      backgroundColor: 'white', 
-      color: 'primary.main', 
-     
-    },
-  }}
-  variant="contained" 
-  color="primary" 
-  href={resumeLink} 
-  target="_blank"
->
-  Get My Resume
-</Button>
-
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <Button variant="contained" color="primary" href={resumeLink} target="_blank" sx={{
+              textAlign: 'center', padding: '10px', fontWeight: 'bold', width: '50%', borderRadius: '20px',
+              '&:hover': { backgroundColor: 'white', color: 'primary.main' }
+            }}>
+              Get My Resume
+            </Button>
           </Box>
-        </Grid>
+        </motion.div>
+      </Grid>
 
         {/* My Stack Section */}
-        <Grid item xs={12} md={6} sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold' }} >
+        <Grid item xs={12} md={4}>
+          <motion.div initial="hidden" whileInView="visible" custom={1} variants={variants}>
+          <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }} >
             My Stack
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -96,9 +96,31 @@ function About({ id }) {
               <Box key={index} sx={iconBoxStyle}>
                 <img src={icon.src} alt={icon.alt} style={{ width: '100%', height: '100%' }} />
               </Box>
+              
             ))}
           </Box>
+          </motion.div>
         </Grid>
+        <Grid item xs={12} md={4}>
+          <motion.div initial="hidden" whileInView="visible" custom={2} variants={variants}>
+          <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }} >
+            My Skills
+          </Typography>
+          <Typography variant="h6" component="p" gutterBottom textAlign="left">
+          <Grid container spacing={2} sx={{ mt: 2 }}>
+          {skills.map((skill, index) => (
+            <Grid item xs={6} key={index} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Checkbox sx={{ color: 'primary.main', mr: 1 }} />
+              <Typography variant="subtitle1">{skill}</Typography>
+            </Grid>
+          ))}
+        </Grid>
+          </Typography>
+          </motion.div>
+        </Grid>
+        <Box sx={{ mt: 4, width: '40%', height: '2px', backgroundColor: 'primary.main', marginTop: '10%'}}>
+
+        </Box>
       </Grid>
     </Box>
  
