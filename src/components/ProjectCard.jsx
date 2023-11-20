@@ -33,7 +33,7 @@ function ProjectCard({ title, imageUrl, technologies, onDetailsClick }) {
           alt={`Image of ${title}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{fontWeight: 'bold'}}>
             {title}
           </Typography>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '10px' }}>
