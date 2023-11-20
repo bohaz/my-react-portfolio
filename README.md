@@ -146,6 +146,6 @@ If you like this project let me know with a STAR⭐!
 
 ## 📝 License <a name="license"></a>
 
-This project is licensed under the MIT License - you can click here to have more details [MIT](https://github.com/mohashyne/24hour_doctor-front_end/blob/dev/MIT.md).
+This project is licensed under the MIT License - you can click here to have more details [MIT](https://github.com/bohaz/my-react-portfolio/blob/feat/sections/LICENSE).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
