@@ -10,8 +10,6 @@ html {
 
 header {
   padding: 0.5%;
-  border-radius: 50px;
-  margin-top: 1%;
 }
 
 .slick-prev::before,
