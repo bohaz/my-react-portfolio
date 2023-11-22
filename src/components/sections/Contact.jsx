@@ -14,6 +14,7 @@ function Contact({ id }) {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        paddingTop: '10%',
       }}
     >
 
