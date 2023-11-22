@@ -67,7 +67,7 @@ export default function PortfolioAppBar() {
       <AppBar position="fixed" sx={{ background: 'linear-gradient(45deg, #007bff 30%, #0056b3 90%)' }}>
         <Toolbar>
           <MobileMenu />
-          <Box component="img" src={logoImage} alt="Ricardo Dev" sx={{ height: { xs: '40px', md: '60px' }, ml: 9 }} />
+          <Box component="img" src={logoImage} alt="Ricardo Dev" sx={{ height: { md: '60px' }, ml: 9, display: { xs: 'none', md: 'block' } }} />
           <Box sx={{
             display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end',
           }}
