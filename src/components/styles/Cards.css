@@ -33,10 +33,6 @@ header {
   z-index: 1;
 }
 
-.cards-container {
-  padding-top: 10%;
-}
-
 @keyframes slideInLeftToRight {
   from {
     opacity: 0;
