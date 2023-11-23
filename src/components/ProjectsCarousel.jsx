@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
+import Box from '@mui/material/Box';
 import ProjectCard from './ProjectCard';
 import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
 import 'slick-carousel/slick/slick.css';
@@ -125,28 +126,42 @@ function ProjectsCarousel({ id }) {
 
   return (
 
-    <div id={id} className="cards-container">
+    <Box
+      id={id}
+      sx={{
+        p: { xs: 2, md: 4 },
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: { xs: '17%', md: '10%' },
+        backgroundColor: '#d0d0d0',
+      }}
+    >
       <h2 className="works-title" style={{ textAlign: 'center', fontSize: '1.8em' }}>My Recent Works</h2>
-      <Slider {...settings}>
-        {projects.map((project) => (
-          <div key={project.title}>
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-              technologies={project.technologies}
-              onDetailsClick={() => handleDetailsClick(project)}
-            />
-          </div>
-        ))}
-      </Slider>
+      <Box sx={{ paddingBottom: '10%' }}>
+        {' '}
+        {/* Agrega este Box */}
+        <Slider {...settings}>
+          {projects.map((project) => (
+            <div key={project.title}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                technologies={project.technologies}
+                onDetailsClick={() => handleDetailsClick(project)}
+              />
+            </div>
+          ))}
+        </Slider>
+      </Box>
 
       <ProjectDetailsDialog
         open={dialogOpen}
         handleClose={handleClose}
         project={selectedProject}
       />
-    </div>
+    </Box>
+
   );
 }
 
