@@ -30,8 +30,8 @@ function About({ id }) {
   ];
 
   const iconBoxStyle = {
-    width: 60,
-    height: 60,
+    width: { xs: 50, md: 60 },
+    height: { xs: 50, md: 60 },
     borderRadius: '20%',
     margin: '10px',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
@@ -64,7 +64,11 @@ function About({ id }) {
     <Box
       id={id}
       sx={{
-        p: 4, justifyContent: 'center', alignItems: 'center', paddingTop: '10%', pb: '5%',
+        p: { xs: 2, md: 4 },
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: { xs: '8%', md: '12%' },
+        pb: '5%',
       }}
     >
       <Grid container spacing={4} justifyContent="center">

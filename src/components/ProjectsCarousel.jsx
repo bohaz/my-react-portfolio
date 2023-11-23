@@ -126,7 +126,7 @@ function ProjectsCarousel({ id }) {
   return (
 
     <div id={id} className="cards-container">
-      <h2 className="works-title">My Recent Works</h2>
+      <h2 className="works-title" style={{ textAlign: 'center', fontSize: '1.8em' }}>My Recent Works</h2>
       <Slider {...settings}>
         {projects.map((project) => (
           <div key={project.title}>
@@ -147,7 +147,6 @@ function ProjectsCarousel({ id }) {
         project={selectedProject}
       />
     </div>
-
   );
 }
 

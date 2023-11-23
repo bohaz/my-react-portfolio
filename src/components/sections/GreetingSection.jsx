@@ -30,13 +30,12 @@ function GreetingSection({ id }) {
   }, []);
 
   const iconBoxStyle = {
-    width: 50,
-    height: 50,
+    width: { xs: 50, md: 60 },
+    height: { xs: 50, md: 60 },
     borderRadius: '20%',
-    margin: '5px',
+    margin: '10px',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     transition: 'transform 0.3s ease-in-out',
-
     '&:hover': {
       transform: 'scale(1.2)',
     },

@@ -62,16 +62,15 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
 
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
+          <DialogActions sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
             <Button
               href={project.liveUrl}
               target="_blank"
               sx={{
                 backgroundColor: '#007bff',
                 color: 'white',
-                width: '30%',
+                width: { xs: '100%', sm: '30%' },
                 borderRadius: '20px',
-                margin: '5px',
                 '&:hover': {
                   backgroundColor: 'white',
                   color: 'primary.main',
@@ -83,11 +82,10 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
             <Button
               href={project.sourceUrl}
               target="_blank"
-              style={{
+              sx={{
                 backgroundColor: 'white',
                 color: '#007bff',
-
-                margin: '5px',
+                width: { xs: '100%', sm: '30%' },
                 '&:hover': {
                   backgroundColor: 'white',
                 },
