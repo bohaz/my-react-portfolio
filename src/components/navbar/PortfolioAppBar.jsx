@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import PersonIcon from '@mui/icons-material/Person';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import HomeIcon from '@mui/icons-material/Home';
 import MobileMenu from '../sections/MobileMenu';
 import { useTheme } from '../dark-mode/ThemeContext';
 import logoImage from '../../assets/aprendizaje.png';
@@ -72,6 +73,7 @@ export default function PortfolioAppBar() {
             display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end',
           }}
           >
+            <Button href="#home" color="inherit" startIcon={<HomeIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Home</Button>
             <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Portfolio</Button>
             <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>About</Button>
             <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Contact</Button>
