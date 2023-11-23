@@ -5,22 +5,10 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
-import { motion } from 'framer-motion';
-import imageSrc from '../../assets/redes.png';
+import imageSrc from '../../assets/redes (1).png';
 
 function GreetingSection({ id }) {
   const sectionRef = useRef(null);
-
-  const movingBackgroundVariants = {
-    animate: {
-      x: ['100%', '-100%'],
-      transition: {
-        duration: 15,
-        ease: 'linear',
-        repeat: Infinity,
-      },
-    },
-  };
 
   useEffect(() => {
     const currentRef = sectionRef.current;
@@ -42,13 +30,12 @@ function GreetingSection({ id }) {
   }, []);
 
   const iconBoxStyle = {
-    width: 50,
-    height: 50,
+    width: { xs: 40, md: 50 },
+    height: { xs: 40, md: 50 },
     borderRadius: '20%',
-    margin: '5px',
+    margin: '10px',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     transition: 'transform 0.3s ease-in-out',
-
     '&:hover': {
       transform: 'scale(1.2)',
     },
@@ -60,7 +47,8 @@ function GreetingSection({ id }) {
 
   const boxStyle = {
     padding: '2rem',
-    marginTop: '4%',
+    paddingTop: '10%',
+    paddingBottom: '10%',
   };
 
   const textStyle = {
@@ -72,23 +60,14 @@ function GreetingSection({ id }) {
 
   return (
 
-    <Box id={id} ref={sectionRef} sx={{ ...boxStyle, position: 'relative', overflow: 'hidden' }}>
+    <Box
+      id={id}
+      ref={sectionRef}
+      sx={{
+        ...boxStyle, position: 'relative', overflow: 'hidden', backgroundColor: '#f0f0f0',
+      }}
+    >
       {/* Texto en movimiento */}
-      <motion.div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          left: 0,
-          width: 'max-content',
-          fontSize: '5rem',
-          fontWeight: 'bold',
-          color: 'rgba(0, 0, 0, 0.1)',
-        }}
-        variants={movingBackgroundVariants}
-        animate="animate"
-      >
-        Full Stack Software Developer
-      </motion.div>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid
           item
@@ -148,7 +127,7 @@ function GreetingSection({ id }) {
           md={6}
           order={{ xs: 3, md: 3 }}
           sx={{
-            display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 0 },
+            display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
           }}
         >
           <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />

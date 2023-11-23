@@ -38,7 +38,7 @@ function MobileMenu() {
         <FontAwesomeIcon icon={faRectangleXmark} />
       </IconButton>
       <List>
-        {['Projects', 'About', 'Contact'].map((text, index) => (
+        {['Home', 'Projects', 'About', 'Contact'].map((text, index) => (
           <React.Fragment key={text}>
             {index > 0 && <Divider />}
             {' '}

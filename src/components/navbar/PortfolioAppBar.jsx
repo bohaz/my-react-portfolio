@@ -2,13 +2,17 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import PersonIcon from '@mui/icons-material/Person';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import HomeIcon from '@mui/icons-material/Home';
 import MobileMenu from '../sections/MobileMenu';
 import { useTheme } from '../dark-mode/ThemeContext';
+import logoImage from '../../assets/aprendizaje.png';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -61,30 +65,19 @@ export default function PortfolioAppBar() {
   const { toggleColorMode } = useTheme();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ background: 'linear-gradient(45deg, #007bff 30%, #0056b3 90%)' }}>
         <Toolbar>
           <MobileMenu />
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          <Box component="img" src={logoImage} alt="Ricardo Dev" sx={{ height: { md: '60px' }, ml: 9, display: { xs: 'none', md: 'block' } }} />
+          <Box sx={{
+            display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end',
+          }}
           >
-            Ricardo Dev
-          </Typography>
-          {/* Botones ocultos en pantallas pequeñas */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <a href="#projects" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color="inherit">Portfolio</Button>
-            </a>
-            <a href="#about" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color="inherit">About</Button>
-            </a>
-            <a href="#contact" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color="inherit">Contact</Button>
-            </a>
+            <Button href="#home" color="inherit" startIcon={<HomeIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Home</Button>
+            <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Portfolio</Button>
+            <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>About</Button>
+            <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Contact</Button>
           </Box>
-          {/* Switch de Modo Oscuro */}
           <FormControlLabel
             control={<MaterialUISwitch onChange={toggleColorMode} />}
             label=""

@@ -14,7 +14,6 @@ function Footer() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '10px',
-      marginTop: '30px',
     }}
     >
       <Box sx={{ '& > *': { margin: 1 } }}>
