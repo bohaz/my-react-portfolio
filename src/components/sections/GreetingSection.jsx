@@ -30,8 +30,8 @@ function GreetingSection({ id }) {
   }, []);
 
   const iconBoxStyle = {
-    width: { xs: 50, md: 60 },
-    height: { xs: 50, md: 60 },
+    width: { xs: 40, md: 50 },
+    height: { xs: 40, md: 50 },
     borderRadius: '20%',
     margin: '10px',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
@@ -47,7 +47,8 @@ function GreetingSection({ id }) {
 
   const boxStyle = {
     padding: '2rem',
-    marginTop: '4%',
+    paddingTop: '10%',
+    paddingBottom: '10%',
   };
 
   const textStyle = {
@@ -59,7 +60,13 @@ function GreetingSection({ id }) {
 
   return (
 
-    <Box id={id} ref={sectionRef} sx={{ ...boxStyle, position: 'relative', overflow: 'hidden' }}>
+    <Box
+      id={id}
+      ref={sectionRef}
+      sx={{
+        ...boxStyle, position: 'relative', overflow: 'hidden', backgroundColor: '#f0f0f0',
+      }}
+    >
       {/* Texto en movimiento */}
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid
@@ -120,7 +127,7 @@ function GreetingSection({ id }) {
           md={6}
           order={{ xs: 3, md: 3 }}
           sx={{
-            display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 0 },
+            display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
           }}
         >
           <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
