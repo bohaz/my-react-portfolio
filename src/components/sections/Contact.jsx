@@ -14,7 +14,9 @@ function Contact({ id }) {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: '10%',
+        paddingTop: { xs: '19%', md: '10%' },
+        paddingBottom: '10%',
+        backgroundColor: '#d0d0d0',
       }}
     >
 
@@ -28,7 +30,7 @@ function Contact({ id }) {
           fontWeight: 'bold',
           color: '#333',
           width: { xs: '100%', md: '50%' },
-          fontSize: { xs: 'h5.fontSize', md: 'h4.fontSize' },
+          fontSize: { xs: 'h6.fontSize', md: 'h4.fontSize' },
         }}
       >
         I&apos;m always interested in hearing about new projects,
