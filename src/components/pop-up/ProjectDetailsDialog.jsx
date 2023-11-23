@@ -28,7 +28,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
       keepMounted
       onClose={handleClose}
       aria-describedby="project-details-description"
-      sx={{ '& .MuiDialog-paper': { borderRadius: '20px' } }}
+      sx={{ '& .MuiDialog-paper': { borderRadius: '20px', backgroundColor: '#f0f0f0' } }}
     >
       {hasProjectData && (
         <>
@@ -85,6 +85,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
               sx={{
                 backgroundColor: 'white',
                 color: '#007bff',
+                borderRadius: '20px',
                 width: { xs: '100%', sm: '30%' },
                 '&:hover': {
                   backgroundColor: 'white',
