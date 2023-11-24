@@ -14,22 +14,22 @@ header {
 
 .slick-prev::before,
 .slick-next::before {
-  color: rgb(108, 163, 235);
-  font-size: 60px;
+  color: black;
+  font-size: 40px;
 }
 
 .slick-prev {
-  left: 23%;
+  left: 28%;
   z-index: 1;
 }
 
 .slick-next {
-  right: 28%;
+  right: 29%;
 }
 
 .slick-prev,
 .slick-next {
-  top: -70px;
+  top: -50px;
   z-index: 1;
 }
 
@@ -50,9 +50,15 @@ header {
   animation: slideInLeftToRight 0.5s ease forwards;
 }
 
-.works-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2%;
+/* Estilo por defecto para pantallas más grandes */
+.my-recent-works {
+  font-size: 3em;
+  margin-bottom: 1%;
+}
+
+/* Estilo para pantallas de hasta 600px de ancho */
+@media (max-width: 600px) {
+  .my-recent-works {
+    font-size: 2em; /* Ajusta este valor según lo necesites */
+  }
 }

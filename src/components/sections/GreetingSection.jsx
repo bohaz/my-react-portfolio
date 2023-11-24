@@ -37,7 +37,7 @@ function GreetingSection({ id }) {
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
-      transform: 'scale(1.2)',
+      transform: 'scale(1.1)',
     },
   };
 

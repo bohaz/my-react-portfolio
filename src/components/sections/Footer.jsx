@@ -7,13 +7,13 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer() {
   return (
     <Box sx={{
-      backgroundColor: '#333',
-      color: 'white',
+      backgroundColor: '#d0d0d0',
+      color: '#333',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '10px',
+      paddingBottom: '2rem',
     }}
     >
       <Box sx={{ '& > *': { margin: 1 } }}>
@@ -27,7 +27,7 @@ function Footer() {
           <TwitterIcon />
         </IconButton>
       </Box>
-      <Typography variant="body2" sx={{ marginTop: '10px' }}>
+      <Typography variant="body2">
         ©
         {' '}
         {new Date().getFullYear()}
