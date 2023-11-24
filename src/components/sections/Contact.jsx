@@ -9,13 +9,13 @@ function Contact({ id }) {
     <Box
       id={id}
       sx={{
-        p: 4,
+        pl: '1rem',
+        pr: '1rem',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: { xs: '19%', md: '10%' },
-        paddingBottom: '10%',
         backgroundColor: '#d0d0d0',
       }}
     >

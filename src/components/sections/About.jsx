@@ -58,6 +58,7 @@ function About({ id }) {
     { src: 'https://skillicons.dev/icons?i=webpack', alt: 'Webpack' },
     { src: 'https://skillicons.dev/icons?i=figma', alt: 'Figma' },
     { src: 'https://skillicons.dev/icons?i=rails', alt: 'Rails' },
+    { src: 'https://skillicons.dev/icons?i=postgresql', alt: 'Rails' },
   ];
 
   return (
@@ -75,7 +76,7 @@ function About({ id }) {
     >
       <Grid container spacing={4} justifyContent="center">
         {/* About Me Section */}
-        <Grid item xs={12} md={10} lg={8}>
+        <Grid item xs={12} md={10} lg={8} sx={{ fontWeight: 'bold' }}>
           <motion.div initial="hidden" whileInView="visible" custom={0} variants={variants}>
             <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
               About Me

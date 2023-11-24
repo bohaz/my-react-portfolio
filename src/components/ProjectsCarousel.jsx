@@ -136,7 +136,8 @@ function ProjectsCarousel({ id }) {
         backgroundColor: '#d0d0d0',
       }}
     >
-      <h2 className="works-title" style={{ textAlign: 'center', fontSize: '1.8em' }}>My Recent Works</h2>
+      <h2 className="works-title my-recent-works" style={{ textAlign: 'center' }}>My Recent Works</h2>
+
       <Box sx={{ paddingBottom: '10%' }}>
         {' '}
         {/* Agrega este Box */}
