@@ -47,14 +47,25 @@ function GreetingSection({ id }) {
 
   const boxStyle = {
     padding: '2rem',
-    paddingTop: '10%',
+    paddingTop: '5%',
     paddingBottom: '10%',
   };
 
+  const textBoxStyle = {
+    p: 2,
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    width: '100%',
+    paddingTop: '5%',
+    paddingBottom: '5%',
+  };
+
   const textStyle = {
-    fontWeight: 'bold',
+    fontWeight: '700',
     marginBottom: '1rem',
     color: 'primary.main',
+    fontFamily: 'Poppins, sans-serif',
 
   };
 
@@ -67,72 +78,74 @@ function GreetingSection({ id }) {
         ...boxStyle, position: 'relative', overflow: 'hidden', backgroundColor: '#f0f0f0',
       }}
     >
+      <Box sx={textBoxStyle}>
+        <Grid container spacing={2} alignItems="center" justifyContent="center">
+          <Grid
+            item
+            xs={12}
+            md={2}
+            order={{ xs: 2, md: 1 }}
+            sx={{
+              display: 'flex', flexDirection: { xs: 'row', md: 'column' }, alignItems: 'center', justifyContent: 'center',
+            }}
+          >
+
+            <Box sx={iconBoxStyle}>
+              <a href="https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/" target="_blank" rel="noopener noreferrer">
+                <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" style={{ width: '100%', height: '100%' }} />
+              </a>
+            </Box>
+            <Box sx={iconBoxStyle}>
+              <a href="https://github.com/bohaz" target="_blank" rel="noopener noreferrer">
+                <img src="https://skillicons.dev/icons?i=github" alt="Github" style={{ width: '100%', height: '100%' }} />
+              </a>
+            </Box>
+            <Box sx={iconBoxStyle}>
+              <a href="https://twitter.com/Ricardo29115571" target="_blank" rel="noopener noreferrer">
+                <img src="https://skillicons.dev/icons?i=twitter" alt="Twitter" style={{ width: '100%', height: '100%' }} />
+              </a>
+            </Box>
+            <Box sx={iconBoxStyle}>
+              <a href="https://medium.com/@ricardomartinezvet" target="_blank" rel="noopener noreferrer" style={iconLinkStyle} aria-label="Medium"><FontAwesomeIcon icon={faMedium} size="2x" /></a>
+            </Box>
+
+          </Grid>
+          <Grid item xs={12} md={10} order={{ xs: 1, md: 2 }} textAlign="left">
+            <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
+              Hey There.
+            </Typography>
+            <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
+              I’m Ricardo.
+            </Typography>
+            <Typography variant="h5" component="h3" gutterBottom className="animate">
+              I&apos;m a Software Developer
+            </Typography>
+            <Typography paragraph className="animate">
+              I can help you build a product, feature
+              <br />
+              or website. Look through some of my
+              <br />
+              work and experience! If you like what you
+              <br />
+              see and have a project you need coded,
+              <br />
+              don’t hesitate to contact me.
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            order={{ xs: 3, md: 3 }}
+            sx={{
+              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
+            }}
+          >
+            <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
+          </Grid>
+        </Grid>
+      </Box>
       {/* Texto en movimiento */}
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
-        <Grid
-          item
-          xs={12}
-          md={2}
-          order={{ xs: 2, md: 1 }}
-          sx={{
-            display: 'flex', flexDirection: { xs: 'row', md: 'column' }, alignItems: 'center', justifyContent: 'center',
-          }}
-        >
-
-          <Box sx={iconBoxStyle}>
-            <a href="https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/" target="_blank" rel="noopener noreferrer">
-              <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" style={{ width: '100%', height: '100%' }} />
-            </a>
-          </Box>
-          <Box sx={iconBoxStyle}>
-            <a href="https://github.com/bohaz" target="_blank" rel="noopener noreferrer">
-              <img src="https://skillicons.dev/icons?i=github" alt="Github" style={{ width: '100%', height: '100%' }} />
-            </a>
-          </Box>
-          <Box sx={iconBoxStyle}>
-            <a href="https://twitter.com/Ricardo29115571" target="_blank" rel="noopener noreferrer">
-              <img src="https://skillicons.dev/icons?i=twitter" alt="Twitter" style={{ width: '100%', height: '100%' }} />
-            </a>
-          </Box>
-          <Box sx={iconBoxStyle}>
-            <a href="https://medium.com/@ricardomartinezvet" target="_blank" rel="noopener noreferrer" style={iconLinkStyle} aria-label="Medium"><FontAwesomeIcon icon={faMedium} size="2x" /></a>
-          </Box>
-
-        </Grid>
-        <Grid item xs={12} md={10} order={{ xs: 1, md: 2 }} textAlign="left">
-          <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
-            Hey There.
-          </Typography>
-          <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
-            I’m Ricardo.
-          </Typography>
-          <Typography variant="h5" component="h3" gutterBottom className="animate">
-            I&apos;m a Software Developer
-          </Typography>
-          <Typography paragraph className="animate">
-            I can help you build a product, feature
-            <br />
-            or website. Look through some of my
-            <br />
-            work and experience! If you like what you
-            <br />
-            see and have a project you need coded,
-            <br />
-            don’t hesitate to contact me.
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          order={{ xs: 3, md: 3 }}
-          sx={{
-            display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
-          }}
-        >
-          <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
-        </Grid>
-      </Grid>
 
     </Box>
 

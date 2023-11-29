@@ -16,9 +16,9 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
 
   const chipStyle = {
     borderRadius: '5px',
-    backgroundColor: 'rgba(128, 128, 128, 0.2)',
     fontWeight: 'bold',
-    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+    backgroundColor: '#007bff',
+    color: 'white',
   };
 
   return (
@@ -28,7 +28,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
       keepMounted
       onClose={handleClose}
       aria-describedby="project-details-description"
-      sx={{ '& .MuiDialog-paper': { borderRadius: '20px', backgroundColor: '#f0f0f0' } }}
+      sx={{ '& .MuiDialog-paper': { borderRadius: '5px', backgroundColor: '#f0f0f0' } }}
     >
       {hasProjectData && (
         <>
@@ -67,10 +67,10 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
               href={project.liveUrl}
               target="_blank"
               sx={{
-                backgroundColor: '#007bff',
-                color: 'white',
+                color: '#007bff',
+                fontSize: '1rem',
                 width: { xs: '100%', sm: '30%' },
-                borderRadius: '20px',
+                borderRadius: '5px',
                 '&:hover': {
                   backgroundColor: 'white',
                   color: 'primary.main',
@@ -83,12 +83,13 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
               href={project.sourceUrl}
               target="_blank"
               sx={{
-                backgroundColor: 'white',
-                color: '#007bff',
-                borderRadius: '20px',
+                color: '#dc143c',
+                borderRadius: '5px',
+                fontSize: '1rem',
                 width: { xs: '100%', sm: '30%' },
                 '&:hover': {
                   backgroundColor: 'white',
+                  color: '#dc143c',
                 },
               }}
             >

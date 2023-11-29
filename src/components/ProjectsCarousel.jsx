@@ -33,7 +33,6 @@ function ProjectsCarousel({ id }) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-
     responsive: [
       {
         breakpoint: 1024,
@@ -136,9 +135,17 @@ function ProjectsCarousel({ id }) {
         backgroundColor: '#d0d0d0',
       }}
     >
-      <h2 className="works-title my-recent-works" style={{ textAlign: 'center' }}>My Recent Works</h2>
 
-      <Box sx={{ paddingBottom: '10%' }}>
+      <h2
+        className="works-title my-recent-works with-underline"
+        style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif' }}
+      >
+        <i className="fa-solid fa-code" />
+        {' '}
+        My Recent Works
+      </h2>
+
+      <Box sx={{ paddingBottom: '1%' }}>
         {' '}
         {/* Agrega este Box */}
         <Slider {...settings}>

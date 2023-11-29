@@ -10,21 +10,26 @@ function ProjectCard({
   const cardStyle = {
     width: '350px',
     height: 'auto',
-    borderRadius: '20px',
+    borderRadius: '5px',
     transition: 'transform 0.3s ease-in-out',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     margin: '15px',
+    backgroundColor: '#f0f0f0',
   };
 
   const chipStyle = {
     borderRadius: '5px',
-    backgroundColor: 'rgba(128, 128, 128, 0.2)',
     fontWeight: 'bold',
-    boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+    border: '#007bff solid 1px',
+    color: '#007bff',
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+
+    <div style={{
+      display: 'flex', justifyContent: 'center', width: '100%',
+    }}
+    >
       <Card
         style={cardStyle}
         onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }}
@@ -58,7 +63,7 @@ function ProjectCard({
               display: 'block',
               backgroundColor: 'primary.main',
               color: 'white',
-              borderRadius: '20px',
+              borderRadius: '5px',
               '&:hover': {
                 backgroundColor: 'white',
                 color: 'primary.main',
@@ -71,6 +76,7 @@ function ProjectCard({
         </CardActions>
       </Card>
     </div>
+
   );
 }
 

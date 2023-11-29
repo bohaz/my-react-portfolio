@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import Checkbox from '@mui/icons-material/CheckBox';
 
 function About({ id }) {
-  const resumeLink = 'https://drive.google.com/file/d/1qHPA9AZ4Dv35ZJaH3WvkQZ7wLK2IDwuF/view?usp=sharing';
+  const resumeLink = 'https://drive.google.com/drive/search?q=ricardo_mart%C3%ADnez_resume';
 
   const variants = {
     visible: (i) => ({
@@ -43,6 +43,23 @@ function About({ id }) {
     },
   };
 
+  const boxStyle = {
+    p: 2,
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    margin: '20px 0',
+  };
+
+  const boxStyle2 = {
+    p: 2,
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    margin: '20px 0',
+    height: '416px',
+  };
+
   const skillIcons = [
     { src: 'https://skillicons.dev/icons?i=js', alt: 'JavaScript' },
     { src: 'https://skillicons.dev/icons?i=html', alt: 'HTML' },
@@ -66,9 +83,9 @@ function About({ id }) {
     <Box
       id={id}
       sx={{
-        px: 2, // padding horizontal para todos los tamaños
-        pt: { xs: '17%', md: '10%' }, // paddingTop específico para xs y md
-        pb: '10%', // paddingBottom para todos los tamaños
+        px: 2,
+        pt: { xs: '17%', md: '8%' },
+        pb: '10%',
         backgroundColor: '#f0f0f0',
         justifyContent: 'center',
         alignItems: 'center',
@@ -77,82 +94,150 @@ function About({ id }) {
       <Grid container spacing={4} justifyContent="center">
         {/* About Me Section */}
         <Grid item xs={12} md={10} lg={8} sx={{ fontWeight: 'bold' }}>
-          <motion.div initial="hidden" whileInView="visible" custom={0} variants={variants}>
-            <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
-              About Me
-            </Typography>
-            <Typography
-              variant="h6"
-              component="p"
-              gutterBottom
-              textAlign="center"
-              sx={{
-                fontSize: { xs: '0.9rem', sm: '1.2rem' }, // Ajusta el tamaño de la fuente para dispositivos móviles y pantallas más grandes
-                maxWidth: { md: '75%', lg: '80%' }, // Restringe el ancho del texto en pantallas de escritorio
-                margin: '0 auto', // Centra el texto horizontalmente
-              }}
-            >
-              I&apos;m Ricardo Martínez, a software developer with a veterinary background. I learned software development at Microverse, a remote school. My interest in this field grew when I started a dog grooming and pet sales business during the pandemic. I realized the importance of software in business for marketing and automation. As a business owner and software enthusiast, I bring a unique perspective to problem-solving and aim to create user-friendly, practical solutions. I enjoy teamwork, sharing ideas, and continuous learning. I&apos;m eager to contribute to a new team, focusing on creating impactful digital products for businesses and their customers. I look forward to discussing how I can be a valuable addition to your team
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-              <Button
-                variant="contained"
-                color="primary"
-                href={resumeLink}
-                target="_blank"
+          <Box sx={boxStyle}>
+            <motion.div initial="hidden" whileInView="visible" custom={0} variants={variants}>
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                textAlign="center"
                 sx={{
-                  textAlign: 'center',
-                  padding: '10px',
-                  fontWeight: 'bold',
-                  width: '50%',
-                  borderRadius: '20px',
-                  '&:hover': { backgroundColor: 'white', color: 'primary.main' },
+                  fontWeight: '700',
+                  fontFamily: 'Poppins, sans-serif',
+                  '::after': {
+                    content: '""',
+                    display: 'block',
+                    height: '2px',
+                    width: '50%',
+                    backgroundColor: 'primary.main',
+                    marginTop: '0.5rem',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                  },
                 }}
               >
-                Get My Resume
-              </Button>
-            </Box>
-          </motion.div>
+                <i className="fa-solid fa-address-card" />
+                {' '}
+                About Me
+              </Typography>
+              <Typography
+                variant="h6"
+                component="p"
+                gutterBottom
+                textAlign="center"
+                sx={{
+                  fontSize: { xs: '0.9rem', sm: '1.2rem' },
+                  maxWidth: { md: '75%', lg: '80%' },
+                  margin: '0 auto',
+                }}
+              >
+                I&apos;m Ricardo Martínez, a software developer with a veterinary background. I learned software development at Microverse, a remote school. My interest in this field grew when I started a dog grooming and pet sales business during the pandemic. I realized the importance of software in business for marketing and automation. As a business owner and software enthusiast, I bring a unique perspective to problem-solving and aim to create user-friendly, practical solutions. I enjoy teamwork, sharing ideas, and continuous learning. I&apos;m eager to contribute to a new team, focusing on creating impactful digital products for businesses and their customers. I look forward to discussing how I can be a valuable addition to your team
+              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={resumeLink}
+                  target="_blank"
+                  sx={{
+                    textAlign: 'center',
+                    padding: '10px',
+                    fontWeight: 'bold',
+                    width: '50%',
+                    borderRadius: '20px',
+                    '&:hover': { backgroundColor: 'white', color: 'primary.main' },
+                  }}
+                >
+                  Get My Resume
+                </Button>
+              </Box>
+            </motion.div>
+          </Box>
+
         </Grid>
 
         {/* My Stack Section */}
         <Grid item container spacing={2} xs={12} md={8} justifyContent="center" marginTop={5}>
           <Grid item xs={12} md={6}>
-            <motion.div initial="hidden" whileInView="visible" custom={1} variants={variants}>
-              <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
-                My Stack
-              </Typography>
-              <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                {skillIcons.map((icon) => (
-                  <Box key={icon.alt} sx={iconBoxStyle}>
-                    <img src={icon.src} alt={icon.alt} style={{ width: '100%', height: '100%' }} />
-                  </Box>
-                ))}
-              </Box>
-            </motion.div>
+            <Box sx={boxStyle}>
+              <motion.div initial="hidden" whileInView="visible" custom={1} variants={variants}>
+                <Typography
+                  variant="h4"
+                  component="h2"
+                  gutterBottom
+                  textAlign="center"
+                  sx={{
+                    fontWeight: 'bold',
+                    fontFamily: 'Poppins, sans-serif',
+                    '::after': {
+                      content: '""',
+                      display: 'block',
+                      height: '2px',
+                      width: '50%',
+                      backgroundColor: 'primary.main',
+                      marginTop: '0.5rem',
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                    },
+                  }}
+                >
+                  <i className="fa-brands fa-stack-overflow" />
+                  {' '}
+                  My Stack
+                </Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {skillIcons.map((icon) => (
+                    <Box key={icon.alt} sx={iconBoxStyle}>
+                      <img src={icon.src} alt={icon.alt} style={{ width: '100%', height: '100%' }} />
+                    </Box>
+                  ))}
+                </Box>
+              </motion.div>
+            </Box>
+
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <motion.div initial="hidden" whileInView="visible" custom={2} variants={variants}>
-              <Typography variant="h4" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
-                My Skills
-              </Typography>
-              <Typography variant="h6" component="p" gutterBottom textAlign="left">
-                <Grid container spacing={2} sx={{ mt: 2 }}>
-                  {skills.map((skill) => (
-                    <Grid item xs={6} key={skill} sx={{ display: 'flex', alignItems: 'center' }}>
-                      <Checkbox sx={{ color: 'primary.main', mr: 1 }} />
-                      <Typography variant="subtitle1">{skill}</Typography>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Typography>
-            </motion.div>
+            <Box sx={boxStyle2}>
+              <motion.div initial="hidden" whileInView="visible" custom={2} variants={variants}>
+                <Typography
+                  variant="h4"
+                  component="h2"
+                  gutterBottom
+                  textAlign="center"
+                  sx={{
+                    fontWeight: 'bold',
+                    fontFamily: 'Poppins, sans-serif',
+                    '::after': { // Pseudo-elemento para el subrayado
+                      content: '""',
+                      display: 'block',
+                      height: '2px',
+                      width: '50%',
+                      backgroundColor: 'primary.main',
+                      marginTop: '0.5rem', // Ajusta el espacio entre el texto y el subrayado
+                      marginLeft: 'auto', // Alinea al centro (combinado con marginRight)
+                      marginRight: 'auto',
+                    },
+                  }}
+                >
+                  <i className="fa-solid fa-screwdriver-wrench" />
+                  {' '}
+                  My Skills
+                </Typography>
+                <Typography variant="h6" component="p" gutterBottom textAlign="left">
+                  <Grid container spacing={2} sx={{ mt: 2 }}>
+                    {skills.map((skill) => (
+                      <Grid item xs={6} key={skill} sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Checkbox sx={{ color: 'primary.main', mr: 1 }} />
+                        <Typography variant="subtitle1">{skill}</Typography>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Typography>
+              </motion.div>
+            </Box>
+
           </Grid>
-          <Box sx={{
-            mt: 4, width: '40%', height: '1px', backgroundColor: 'primary.main', marginTop: '5%',
-          }}
-          />
         </Grid>
       </Grid>
     </Box>
