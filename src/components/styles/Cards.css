@@ -12,7 +12,6 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-
 header {
   padding: 0.4%;
   top: -1%;
@@ -64,7 +63,6 @@ header {
 
 .with-underline {
   position: relative;
-  
   text-align: center;
 }
 
