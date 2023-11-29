@@ -8,28 +8,34 @@ html {
   scroll-behavior: smooth;
 }
 
+.MuiButton-root {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 header {
-  padding: 0.5%;
+  padding: 0.4%;
+  top: -1%;
 }
 
 .slick-prev::before,
 .slick-next::before {
-  color: black;
+  color: #007bff;
   font-size: 40px;
 }
 
 .slick-prev {
-  left: 28%;
+  left: 24%;
   z-index: 1;
 }
 
 .slick-next {
-  right: 29%;
+  right: 26%;
 }
 
 .slick-prev,
 .slick-next {
-  top: -50px;
+  top: -68px;
   z-index: 1;
 }
 
@@ -55,6 +61,24 @@ header {
   font-size: 3em;
   margin-bottom: 1%;
 }
+
+.with-underline {
+  position: relative;
+  
+  text-align: center;
+}
+
+.with-underline::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 50%;
+  background-color: #007bff; /* Cambia este color según tu diseño */
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* Estilo para pantallas de hasta 600px de ancho */
 @media (max-width: 600px) {

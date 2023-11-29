@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Typography, IconButton } from '@mui/material';
+import {
+  Box, Typography, IconButton, Divider,
+} from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -7,16 +9,23 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer() {
   return (
     <Box sx={{
-      backgroundColor: '#d0d0d0',
-      color: '#333',
+      backgroundColor: '#333',
+      color: 'white',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingBottom: '2rem',
+      padding: '1rem',
     }}
     >
-      <Box sx={{ '& > *': { margin: 1 } }}>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', mb: 2, justifyContent: 'center',
+      }}
+      >
+        <Typography variant="body1" sx={{ mr: 2 }}>
+          Connect with me on social media
+        </Typography>
+        <Divider orientation="vertical" flexItem sx={{ mx: 2, height: '35px', bgcolor: 'white' }} />
         <IconButton color="inherit" href="https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/" target="_blank">
           <LinkedInIcon />
         </IconButton>

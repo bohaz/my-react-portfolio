@@ -12,7 +12,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import HomeIcon from '@mui/icons-material/Home';
 import MobileMenu from '../sections/MobileMenu';
 import { useTheme } from '../dark-mode/ThemeContext';
-import logoImage from '../../assets/aprendizaje.png';
+import logoImage from '../../assets/letra-r.png';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -73,10 +73,10 @@ export default function PortfolioAppBar() {
             display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end',
           }}
           >
-            <Button href="#home" color="inherit" startIcon={<HomeIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Home</Button>
-            <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Portfolio</Button>
-            <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>About</Button>
-            <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={{ '&:hover': { transform: 'scale(1.1)' } }}>Contact</Button>
+            <Button href="#home" color="inherit" startIcon={<HomeIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Home</Button>
+            <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Portfolio</Button>
+            <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>About</Button>
+            <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Contact</Button>
           </Box>
           <FormControlLabel
             control={<MaterialUISwitch onChange={toggleColorMode} />}
