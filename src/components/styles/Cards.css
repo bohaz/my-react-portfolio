@@ -55,7 +55,6 @@ header {
   animation: slideInLeftToRight 0.5s ease forwards;
 }
 
-/* Estilo por defecto para pantallas más grandes */
 .my-recent-works {
   font-size: 3em;
   margin-bottom: 1%;
@@ -71,16 +70,14 @@ header {
   display: block;
   height: 2px;
   width: 50%;
-  background-color: #007bff; /* Cambia este color según tu diseño */
+  background-color: #007bff;
   margin-top: 0.5rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-
-/* Estilo para pantallas de hasta 600px de ancho */
 @media (max-width: 600px) {
   .my-recent-works {
-    font-size: 2em; /* Ajusta este valor según lo necesites */
+    font-size: 2em;
   }
 }
