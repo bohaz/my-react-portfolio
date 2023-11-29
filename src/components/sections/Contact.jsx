@@ -20,11 +20,11 @@ function Contact({ id }) {
     >
       <Box
         sx={{
-          width: { xs: '90%', md: '70%' }, // Ajusta el ancho del formulario
-          backgroundColor: '#fff', // Color de fondo del formulario
-          padding: '2rem', // Espaciado interno
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // Sombra para darle profundidad
-          borderRadius: '15px', // Bordes redondeados
+          width: { xs: '90%', md: '70%' },
+          backgroundColor: '#fff',
+          padding: '2rem',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+          borderRadius: '15px',
         }}
       >
         <Typography
@@ -46,7 +46,7 @@ function Contact({ id }) {
         </Typography>
         <Typography
           sx={{
-            mb: 4, // Espacio debajo del subtítulo
+            mb: 4,
             textAlign: 'center',
             color: 'text.secondary',
           }}

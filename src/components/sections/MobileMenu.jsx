@@ -70,8 +70,8 @@ function MobileMenu() {
         onClose={toggleDrawer(false)}
         sx={{
           '& .MuiDrawer-paper': {
-            backgroundColor: '#f7f7f7', // Cambia el color de fondo del Drawer
-            color: '#333', // Cambia el color del texto
+            backgroundColor: '#f7f7f7',
+            color: '#333',
           },
         }}
       >
