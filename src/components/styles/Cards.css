@@ -17,7 +17,11 @@ header {
   top: -1%;
 }
 
-.fa-solid.fa-envelope, .fa-address-card, .fa-briefcase, .fa-stack-overflow, .fa-screwdriver-wrench {
+.fa-solid.fa-envelope,
+.fa-address-card,
+.fa-briefcase,
+.fa-stack-overflow,
+.fa-screwdriver-wrench {
   color: #f0bc02;
 }
 

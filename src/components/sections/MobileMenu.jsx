@@ -17,7 +17,7 @@ import { useTheme } from '@mui/material/styles';
 
 function MobileMenu() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const theme = useTheme(); // Para usar el tema actual en los estilos
+  const theme = useTheme();
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
