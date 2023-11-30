@@ -19,11 +19,11 @@ function GreetingSection({ id }) {
   };
 
   const rotateAnimation = {
-    rotate: [0, 360], // Rota de 0 a 360 grados
+    rotate: [0, 360],
     transition: {
-      duration: 10, // Duración de la rotación completa en segundos
-      ease: 'linear', // Tipo de animación (en este caso lineal para un movimiento constante)
-      repeat: Infinity, // Repetir la animación infinitamente
+      duration: 10,
+      ease: 'linear',
+      repeat: Infinity,
     },
   };
 
@@ -44,8 +44,9 @@ function GreetingSection({ id }) {
   };
 
   const boxStyle = {
-    padding: '2rem',
-    paddingTop: '5%',
+    pl: { xs: '1rem', md: '2rem' },
+    pr: { xs: '1rem', md: '2rem' },
+    paddingTop: '4%',
     paddingBottom: '10%',
   };
 
@@ -61,10 +62,8 @@ function GreetingSection({ id }) {
 
   const textStyle = {
     fontWeight: '700',
-    marginBottom: '1rem',
-    color: 'primary.main',
+    color: '#104579',
     fontFamily: 'Poppins, sans-serif',
-
   };
 
   return (
@@ -111,20 +110,17 @@ function GreetingSection({ id }) {
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
               <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
                 Hey There.
-              </Typography>
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
+                <br />
                 I’m Ricardo.
               </Typography>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography variant="h5" component="h3" gutterBottom className="animate">
+              <Typography variant="h5" component="h3" gutterBottom className="animate" sx={{ color: '#f0bc02' }}>
                 I&apos;m a Software Developer
               </Typography>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography paragraph className="animate">
+              <Typography paragraph className="animate" sx={{ color: '#104579' }}>
                 I can help you build a product, feature
                 <br />
                 or website. Look through some of my
@@ -143,7 +139,7 @@ function GreetingSection({ id }) {
             md={6}
             order={{ xs: 3, md: 3 }}
             sx={{
-              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 85 },
+              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 63 },
             }}
           >
             <motion.img

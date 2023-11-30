@@ -91,7 +91,7 @@ function About({ id }) {
         alignItems: 'center',
       }}
     >
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container justifyContent="center">
         {/* About Me Section */}
         <Grid item xs={12} md={10} lg={8} sx={{ fontWeight: 'bold' }}>
           <Box sx={boxStyle}>
@@ -102,6 +102,7 @@ function About({ id }) {
                 gutterBottom
                 textAlign="center"
                 sx={{
+                  color: '#104579',
                   fontWeight: '700',
                   fontFamily: 'Poppins, sans-serif',
                   '::after': {
@@ -126,6 +127,7 @@ function About({ id }) {
                 gutterBottom
                 textAlign="center"
                 sx={{
+                  color: '#104579',
                   fontSize: { xs: '0.9rem', sm: '1.2rem' },
                   maxWidth: { md: '75%', lg: '80%' },
                   margin: '0 auto',
@@ -167,6 +169,7 @@ function About({ id }) {
                   gutterBottom
                   textAlign="center"
                   sx={{
+                    color: '#104579',
                     fontWeight: 'bold',
                     fontFamily: 'Poppins, sans-serif',
                     '::after': {
@@ -206,6 +209,7 @@ function About({ id }) {
                   gutterBottom
                   textAlign="center"
                   sx={{
+                    color: '#104579',
                     fontWeight: 'bold',
                     fontFamily: 'Poppins, sans-serif',
                     '::after': {
@@ -227,7 +231,7 @@ function About({ id }) {
                 <Typography variant="h6" component="p" gutterBottom textAlign="left">
                   <Grid container spacing={2} sx={{ mt: 2 }}>
                     {skills.map((skill) => (
-                      <Grid item xs={6} key={skill} sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Grid item xs={6} key={skill} sx={{ display: 'flex', alignItems: 'center', color: '#104579' }}>
                         <Checkbox sx={{ color: 'primary.main', mr: 1 }} />
                         <Typography variant="subtitle1">{skill}</Typography>
                       </Grid>
