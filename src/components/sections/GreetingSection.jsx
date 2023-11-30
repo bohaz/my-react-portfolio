@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
-import imageSrc from '../../assets/redes (1).png';
+import imageSrc from '../../assets/Development.png';
 
 function GreetingSection({ id }) {
   const textAnimation = {
@@ -15,6 +15,15 @@ function GreetingSection({ id }) {
       opacity: 1,
       y: 0,
       transition: { duration: 0.6 },
+    },
+  };
+
+  const rotateAnimation = {
+    rotate: [0, 360], // Rota de 0 a 360 grados
+    transition: {
+      duration: 10, // Duración de la rotación completa en segundos
+      ease: 'linear', // Tipo de animación (en este caso lineal para un movimiento constante)
+      repeat: Infinity, // Repetir la animación infinitamente
     },
   };
 
@@ -134,10 +143,16 @@ function GreetingSection({ id }) {
             md={6}
             order={{ xs: 3, md: 3 }}
             sx={{
-              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
+              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 85 },
             }}
           >
-            <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
+            <motion.img
+              src={imageSrc}
+              alt="Descripción de la imagen"
+              style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }}
+              animate={rotateAnimation}
+            />
+
           </Grid>
         </Grid>
       </Box>
