@@ -3,15 +3,21 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon'; // Importante para los iconos
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
+import HomeIcon from '@mui/icons-material/Home';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import PersonIcon from '@mui/icons-material/Person';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import CloseIcon from '@mui/icons-material/Close'; // Icono de cierre más estilizado
+import { useTheme } from '@mui/material/styles';
 
 function MobileMenu() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -25,26 +31,25 @@ function MobileMenu() {
       sx={{
         width: 250,
         textAlign: 'center',
-        paddingTop: '10%',
+        paddingTop: theme.spacing(5),
       }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
       <IconButton
-        sx={{ position: 'absolute', top: 0, right: 0 }}
+        sx={{ position: 'absolute', top: theme.spacing(1), right: theme.spacing(1) }}
         onClick={toggleDrawer(false)}
       >
-        <FontAwesomeIcon icon={faRectangleXmark} />
+        <CloseIcon />
       </IconButton>
       <List>
-        {['Home', 'Projects', 'About', 'Contact'].map((text, index) => (
-          <React.Fragment key={text}>
+        {[{ text: 'Home', icon: <HomeIcon /> }, { text: 'Projects', icon: <WorkOutlineIcon /> }, { text: 'About', icon: <PersonIcon /> }, { text: 'Contact', icon: <MailOutlineIcon /> }].map((item, index) => (
+          <React.Fragment key={item.text}>
             {index > 0 && <Divider />}
-            {' '}
-            {/* Añade un divisor entre los elementos */}
-            <ListItem button key={text} component="a" href={`#${text.toLowerCase()}`}>
-              <ListItemText primary={text} />
+            <ListItem button component="a" href={`#${item.text.toLowerCase()}`}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} sx={{ fontWeight: 'bold', fontFamily: 'Poppins, sans-serif' }} />
             </ListItem>
           </React.Fragment>
         ))}
@@ -70,8 +75,12 @@ function MobileMenu() {
         onClose={toggleDrawer(false)}
         sx={{
           '& .MuiDrawer-paper': {
-            backgroundColor: '#f7f7f7',
-            color: '#333',
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+            boxShadow: theme.shadows[5],
+          },
+          '& .MuiListItemIcon-root': {
+            minWidth: '40px',
           },
         }}
       >

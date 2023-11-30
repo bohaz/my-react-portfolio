@@ -22,6 +22,13 @@ export default function PortfolioAppBar() {
       });
     }
   };
+
+  const buttonStyle = {
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: '700',
+    '&:hover': { transform: 'scale(1.1)' },
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ background: 'linear-gradient(45deg, #007bff 30%, #0056b3 90%)' }}>
@@ -42,11 +49,12 @@ export default function PortfolioAppBar() {
             display: { xs: 'none', md: 'flex' }, alignItems: 'center', flexGrow: 1, justifyContent: 'flex-end',
           }}
           >
-            <Button onClick={() => scrollToSection('home')} color="inherit" startIcon={<HomeIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Home</Button>
-            <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Portfolio</Button>
-            <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>About</Button>
-            <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: '700', '&:hover': { transform: 'scale(1.1)' } }}>Contact</Button>
+            <Button onClick={() => scrollToSection('home')} color="inherit" startIcon={<HomeIcon />} sx={buttonStyle}>Home</Button>
+            <Button href="#projects" color="inherit" startIcon={<WorkOutlineIcon />} sx={buttonStyle}>Portfolio</Button>
+            <Button href="#about" color="inherit" startIcon={<PersonIcon />} sx={buttonStyle}>About</Button>
+            <Button href="#contact" color="inherit" startIcon={<MailOutlineIcon />} sx={buttonStyle}>Contact</Button>
           </Box>
+
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             <WhatsAppButton />
           </Box>

@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
-import imageSrc from '../../assets/redes (1).png';
+import imageSrc from '../../assets/Development.png';
 
 function GreetingSection({ id }) {
   const textAnimation = {
@@ -15,6 +15,15 @@ function GreetingSection({ id }) {
       opacity: 1,
       y: 0,
       transition: { duration: 0.6 },
+    },
+  };
+
+  const rotateAnimation = {
+    rotate: [0, 360],
+    transition: {
+      duration: 10,
+      ease: 'linear',
+      repeat: Infinity,
     },
   };
 
@@ -35,8 +44,9 @@ function GreetingSection({ id }) {
   };
 
   const boxStyle = {
-    padding: '2rem',
-    paddingTop: '5%',
+    pl: { xs: '1rem', md: '2rem' },
+    pr: { xs: '1rem', md: '2rem' },
+    paddingTop: '4%',
     paddingBottom: '10%',
   };
 
@@ -52,10 +62,8 @@ function GreetingSection({ id }) {
 
   const textStyle = {
     fontWeight: '700',
-    marginBottom: '1rem',
-    color: 'primary.main',
+    color: '#104579',
     fontFamily: 'Poppins, sans-serif',
-
   };
 
   return (
@@ -102,20 +110,17 @@ function GreetingSection({ id }) {
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
               <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
                 Hey There.
-              </Typography>
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
+                <br />
                 I’m Ricardo.
               </Typography>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography variant="h5" component="h3" gutterBottom className="animate">
+              <Typography variant="h5" component="h3" gutterBottom className="animate" sx={{ color: '#f0bc02' }}>
                 I&apos;m a Software Developer
               </Typography>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
-              <Typography paragraph className="animate">
+              <Typography paragraph className="animate" sx={{ color: '#104579' }}>
                 I can help you build a product, feature
                 <br />
                 or website. Look through some of my
@@ -134,10 +139,16 @@ function GreetingSection({ id }) {
             md={6}
             order={{ xs: 3, md: 3 }}
             sx={{
-              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 100 },
+              display: 'flex', justifyContent: 'center', position: { md: 'absolute' }, right: { md: 200 }, top: { md: 63 },
             }}
           >
-            <img src={imageSrc} alt="Descripción de la imagen" style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }} />
+            <motion.img
+              src={imageSrc}
+              alt="Descripción de la imagen"
+              style={{ maxWidth: '70%', maxHeight: '100vh', objectFit: 'contain' }}
+              animate={rotateAnimation}
+            />
+
           </Grid>
         </Grid>
       </Box>

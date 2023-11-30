@@ -29,14 +29,13 @@ function Contact({ id }) {
       >
         <Typography
           variant="h4"
-          component="p"
+          component="h2"
           gutterBottom
           textAlign="center"
           sx={{
             mb: 2,
+            color: '#104579',
             fontWeight: '700',
-            color: '#333',
-            fontSize: { xs: 'h6.fontSize', md: 'h4.fontSize' },
             fontFamily: 'Poppins, sans-serif',
             '::after': {
               content: '""',
@@ -56,10 +55,10 @@ function Contact({ id }) {
         </Typography>
         <Typography
           sx={{
+            color: '#104579',
             mb: 4,
             fontSize: { xs: 'body1.fontSize', md: 'h6.fontSize' },
             textAlign: 'center',
-            color: 'text.secondary',
           }}
         >
           I&apos;m always interested in hearing about new projects,

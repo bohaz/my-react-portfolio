@@ -14,14 +14,14 @@ function ProjectCard({
     transition: 'transform 0.3s ease-in-out',
     boxShadow: '0 3px 10px rgb(0 0 0 / 0.5)',
     margin: '15px',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#ffffff',
   };
 
   const chipStyle = {
     borderRadius: '5px',
     fontWeight: 'bold',
-    border: '#007bff solid 1px',
-    color: '#007bff',
+    border: '#104579 solid 1px',
+    color: '#104579',
   };
 
   return (
@@ -42,7 +42,7 @@ function ProjectCard({
           alt={`Image of ${title}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+          <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'bold', color: '#104579' }}>
             {title}
           </Typography>
           <div style={{

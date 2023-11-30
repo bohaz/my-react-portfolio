@@ -146,11 +146,11 @@ function ProjectsCarousel({ id }) {
       <Box sx={boxStyle}>
         <h2
           className="works-title my-recent-works with-underline"
-          style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif' }}
+          style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif', color: '#104579' }}
         >
-          <i className="fa-solid fa-code" />
+          <i className="fa-solid fa-briefcase" />
           {' '}
-          My Recent Works
+          Recent Projects
         </h2>
 
         <Box sx={{ paddingBottom: '1%' }}>

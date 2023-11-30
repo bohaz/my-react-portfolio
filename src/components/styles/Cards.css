@@ -17,9 +17,17 @@ header {
   top: -1%;
 }
 
+.fa-solid.fa-envelope,
+.fa-address-card,
+.fa-briefcase,
+.fa-stack-overflow,
+.fa-screwdriver-wrench {
+  color: #f0bc02;
+}
+
 .slick-prev::before,
 .slick-next::before {
-  color: #007bff;
+  color: #104579;
   font-size: 40px;
 }
 
@@ -39,7 +47,7 @@ header {
 }
 
 .my-recent-works {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 1%;
 }
 
@@ -61,6 +69,6 @@ header {
 
 @media (max-width: 600px) {
   .my-recent-works {
-    font-size: 1.5em;
+    font-size: 1.9em;
   }
 }
