@@ -148,7 +148,7 @@ function ProjectsCarousel({ id }) {
           className="works-title my-recent-works with-underline"
           style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif' }}
         >
-          <i className="fa-solid fa-code" />
+          <i className="fa-solid fa-briefcase" />
           {' '}
           My Recent Works
         </h2>
