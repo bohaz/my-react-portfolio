@@ -1,33 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMedium } from '@fortawesome/free-brands-svg-icons';
+import { motion } from 'framer-motion';
 import imageSrc from '../../assets/redes (1).png';
 
 function GreetingSection({ id }) {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const currentRef = sectionRef.current;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          const { target } = entry;
-          const delay = index * 0.2;
-          target.style.animationDelay = `${delay}s`;
-          target.classList.add('slide-in-left-to-right');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const nodes = currentRef ? currentRef.querySelectorAll('.animate') : [];
-    nodes.forEach((node) => observer.observe(node));
-
-    return () => nodes.forEach((node) => observer.unobserve(node));
-  }, []);
+  const textAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
 
   const iconBoxStyle = {
     width: { xs: 40, md: 50 },
@@ -73,7 +62,6 @@ function GreetingSection({ id }) {
 
     <Box
       id={id}
-      ref={sectionRef}
       sx={{
         ...boxStyle, position: 'relative', overflow: 'hidden', backgroundColor: '#f0f0f0',
       }}
@@ -111,26 +99,34 @@ function GreetingSection({ id }) {
 
           </Grid>
           <Grid item xs={12} md={10} order={{ xs: 1, md: 2 }} textAlign="left">
-            <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
-              Hey There.
-            </Typography>
-            <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
-              I’m Ricardo.
-            </Typography>
-            <Typography variant="h5" component="h3" gutterBottom className="animate">
-              I&apos;m a Software Developer
-            </Typography>
-            <Typography paragraph className="animate">
-              I can help you build a product, feature
-              <br />
-              or website. Look through some of my
-              <br />
-              work and experience! If you like what you
-              <br />
-              see and have a project you need coded,
-              <br />
-              don’t hesitate to contact me.
-            </Typography>
+            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
+              <Typography variant="h4" component="h1" sx={textStyle} gutterBottom className="animate">
+                Hey There.
+              </Typography>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
+              <Typography variant="h4" component="h2" gutterBottom className="animate" sx={{ ...textStyle, color: 'primary.main' }}>
+                I’m Ricardo.
+              </Typography>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
+              <Typography variant="h5" component="h3" gutterBottom className="animate">
+                I&apos;m a Software Developer
+              </Typography>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" variants={textAnimation}>
+              <Typography paragraph className="animate">
+                I can help you build a product, feature
+                <br />
+                or website. Look through some of my
+                <br />
+                work and experience! If you like what you
+                <br />
+                see and have a project you need coded,
+                <br />
+                don’t hesitate to contact me.
+              </Typography>
+            </motion.div>
           </Grid>
           <Grid
             item

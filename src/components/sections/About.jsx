@@ -107,8 +107,8 @@ function About({ id }) {
                   '::after': {
                     content: '""',
                     display: 'block',
-                    height: '2px',
-                    width: '50%',
+                    height: '1px',
+                    width: '100%',
                     backgroundColor: 'primary.main',
                     marginTop: '0.5rem',
                     marginLeft: 'auto',
@@ -172,8 +172,8 @@ function About({ id }) {
                     '::after': {
                       content: '""',
                       display: 'block',
-                      height: '2px',
-                      width: '50%',
+                      height: '1px',
+                      width: '100%',
                       backgroundColor: 'primary.main',
                       marginTop: '0.5rem',
                       marginLeft: 'auto',
@@ -208,14 +208,14 @@ function About({ id }) {
                   sx={{
                     fontWeight: 'bold',
                     fontFamily: 'Poppins, sans-serif',
-                    '::after': { // Pseudo-elemento para el subrayado
+                    '::after': {
                       content: '""',
                       display: 'block',
-                      height: '2px',
-                      width: '50%',
+                      height: '1px',
+                      width: '100%',
                       backgroundColor: 'primary.main',
-                      marginTop: '0.5rem', // Ajusta el espacio entre el texto y el subrayado
-                      marginLeft: 'auto', // Alinea al centro (combinado con marginRight)
+                      marginTop: '0.5rem',
+                      marginLeft: 'auto',
                       marginRight: 'auto',
                     },
                   }}

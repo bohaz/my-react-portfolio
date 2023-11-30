@@ -123,6 +123,14 @@ function ProjectsCarousel({ id }) {
     },
   ];
 
+  const boxStyle = {
+    p: 2,
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    margin: '20px 0',
+  };
+
   return (
 
     <Box
@@ -131,45 +139,45 @@ function ProjectsCarousel({ id }) {
         p: { xs: 2, md: 4 },
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: { xs: '17%', md: '10%' },
+        paddingTop: { xs: '14%', md: '5%' },
         backgroundColor: '#d0d0d0',
       }}
     >
+      <Box sx={boxStyle}>
+        <h2
+          className="works-title my-recent-works with-underline"
+          style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif' }}
+        >
+          <i className="fa-solid fa-code" />
+          {' '}
+          My Recent Works
+        </h2>
 
-      <h2
-        className="works-title my-recent-works with-underline"
-        style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif' }}
-      >
-        <i className="fa-solid fa-code" />
-        {' '}
-        My Recent Works
-      </h2>
+        <Box sx={{ paddingBottom: '1%' }}>
+          {' '}
+          {/* Agrega este Box */}
+          <Slider {...settings}>
+            {projects.map((project) => (
+              <div key={project.title}>
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  technologies={project.technologies}
+                  onDetailsClick={() => handleDetailsClick(project)}
+                />
+              </div>
+            ))}
+          </Slider>
+        </Box>
 
-      <Box sx={{ paddingBottom: '1%' }}>
-        {' '}
-        {/* Agrega este Box */}
-        <Slider {...settings}>
-          {projects.map((project) => (
-            <div key={project.title}>
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imageUrl={project.imageUrl}
-                technologies={project.technologies}
-                onDetailsClick={() => handleDetailsClick(project)}
-              />
-            </div>
-          ))}
-        </Slider>
+        <ProjectDetailsDialog
+          open={dialogOpen}
+          handleClose={handleClose}
+          project={selectedProject}
+        />
       </Box>
-
-      <ProjectDetailsDialog
-        open={dialogOpen}
-        handleClose={handleClose}
-        project={selectedProject}
-      />
     </Box>
-
   );
 }
 

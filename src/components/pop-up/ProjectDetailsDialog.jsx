@@ -17,8 +17,8 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
   const chipStyle = {
     borderRadius: '5px',
     fontWeight: 'bold',
-    backgroundColor: '#007bff',
-    color: 'white',
+    border: '#007bff solid 1px',
+    color: '#007bff',
   };
 
   return (

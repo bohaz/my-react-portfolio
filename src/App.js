@@ -12,6 +12,7 @@ import Footer from './components/sections/Footer';
 function App() {
   return (
     <ThemeProvider>
+
       <Header />
       <Toolbar />
       <GreetingSection id="home" />

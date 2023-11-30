@@ -5,6 +5,7 @@ import {
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import WhatsAppButton from '../whatsappButton/WhatsAppButton';
 
 function Footer() {
   return (
@@ -23,7 +24,7 @@ function Footer() {
       }}
       >
         <Typography variant="body1" sx={{ mr: 2 }}>
-          Connect with me on social media
+          Connect with me on
         </Typography>
         <Divider orientation="vertical" flexItem sx={{ mx: 2, height: '35px', bgcolor: 'white' }} />
         <IconButton color="inherit" href="https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/" target="_blank">
@@ -35,6 +36,7 @@ function Footer() {
         <IconButton color="inherit" href="https://twitter.com/Ricardo29115571" target="_blank">
           <TwitterIcon />
         </IconButton>
+        <WhatsAppButton />
       </Box>
       <Typography variant="body2">
         ©

@@ -34,29 +34,12 @@ header {
 
 .slick-prev,
 .slick-next {
-  top: -68px;
+  top: -60px;
   z-index: 1;
 }
 
-@keyframes slideInLeftToRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide-in-left-to-right {
-  opacity: 0;
-  animation: slideInLeftToRight 0.5s ease forwards;
-}
-
 .my-recent-works {
-  font-size: 3em;
+  font-size: 2.5em;
   margin-bottom: 1%;
 }
 
@@ -68,8 +51,8 @@ header {
 .with-underline::after {
   content: '';
   display: block;
-  height: 2px;
-  width: 50%;
+  height: 1px;
+  width: 100%;
   background-color: #007bff;
   margin-top: 0.5rem;
   margin-left: auto;
@@ -78,6 +61,6 @@ header {
 
 @media (max-width: 600px) {
   .my-recent-works {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }

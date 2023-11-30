@@ -38,6 +38,16 @@ function Contact({ id }) {
             color: '#333',
             fontSize: { xs: 'h6.fontSize', md: 'h4.fontSize' },
             fontFamily: 'Poppins, sans-serif',
+            '::after': {
+              content: '""',
+              display: 'block',
+              height: '1px',
+              width: '100%',
+              backgroundColor: 'primary.main',
+              marginTop: '0.5rem',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            },
           }}
         >
           <i className="fa-solid fa-envelope" />
@@ -47,6 +57,7 @@ function Contact({ id }) {
         <Typography
           sx={{
             mb: 4,
+            fontSize: { xs: 'body1.fontSize', md: 'h6.fontSize' },
             textAlign: 'center',
             color: 'text.secondary',
           }}
