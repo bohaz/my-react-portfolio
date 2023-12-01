@@ -12,7 +12,7 @@ import image128 from '../assets/24doctor.png';
 import transfrontImage from '../assets/Transact.png';
 import airappImage from '../assets/Airapp.png';
 import todoImage from '../assets/Todo.png';
-import rodeoImage from '../assets/Captura de pantalla (7).png';
+import rodeoImage from '../assets/Rodeo.png';
 import mathImage from '../assets/Math.png';
 import spaceImage from '../assets/Space.png';
 
