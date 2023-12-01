@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import Checkbox from '@mui/icons-material/CheckBox';
 
 function About({ id }) {
-  const resumeLink = 'https://drive.google.com/drive/search?q=ricardo_mart%C3%ADnez_resume';
+  const resumeLink = 'https://drive.google.com/file/d/19bOZ790T6PahZ4wPUvrbFeaNgg5PUAd3/view?usp=sharing';
 
   const variants = {
     visible: (i) => ({
