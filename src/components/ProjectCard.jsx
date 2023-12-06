@@ -1,12 +1,52 @@
 import React from 'react';
-import {
-  Card, CardActions, CardContent, CardMedia, Button, Typography, Chip,
-} from '@mui/material';
 import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
+import {
+  Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography,
+} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Icon } from '@iconify/react';
+
+const ExpandMore = styled(({ expand, ...otherProps }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <IconButton {...otherProps} />
+))(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 function ProjectCard({
-  title, imageUrl, technologies, onDetailsClick,
+  title, imageUrl, description, technologies, onDetailsClick,
 }) {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  const handleMoreClick = () => {
+    // Aquí invocamos la función onDetailsClick con todos los detalles del proyecto
+    onDetailsClick({
+      title, imageUrl, description, technologies,
+    });
+  };
+
+  const technologyIcons = {
+    React: 'logos:react',
+    Redux: 'logos:redux',
+    Ruby: 'logos:ruby',
+    Bootstrap: 'logos:bootstrap',
+    CSS3: 'logos:css-3',
+    HTML: 'logos:html-5',
+    Javascript: 'logos:javascript',
+    Rails: 'logos:rails',
+  };
+
   const cardStyle = {
     width: '350px',
     height: 'auto',
@@ -17,66 +57,65 @@ function ProjectCard({
     backgroundColor: '#ffffff',
   };
 
-  const chipStyle = {
-    borderRadius: '5px',
+  const titleStyle = {
+    fontFamily: 'Poppins, sans-serif',
     fontWeight: 'bold',
-    border: '#104579 solid 1px',
+    fontSize: '1.25rem',
     color: '#104579',
   };
 
   return (
-
-    <div style={{
-      display: 'flex', justifyContent: 'center', width: '100%',
-    }}
+    <Card
+      style={cardStyle}
+      onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02)'; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+      sx={{ maxWidth: 345 }}
     >
-      <Card
-        style={cardStyle}
-        onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-      >
-        <CardMedia
-          component="img"
-          height="200"
-          image={imageUrl}
-          alt={`Image of ${title}`}
-        />
+      <CardHeader
+        action={(
+          <IconButton aria-label="settings" onClick={handleMoreClick}>
+            <MoreVertIcon />
+          </IconButton>
+          )}
+        title={
+          <Typography style={titleStyle}>{title}</Typography>
+          }
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={imageUrl}
+        alt={title}
+      />
+      <CardContent>
+        <Typography variant="body2" color="#104579">
+          Technologies:
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {technologies.map((tech) => (
+            <Icon key={tech} icon={technologyIcons[tech] || 'emojione:question-mark'} style={{ fontSize: '30px', margin: '5px' }} />
+          ))}
+
+        </div>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'bold', color: '#104579' }}>
-            {title}
-          </Typography>
-          <div style={{
-            display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginTop: '10px',
-          }}
-          >
-            {technologies.map((tech) => (
-              <Chip key={tech} label={tech} variant="outlined" sx={chipStyle} />
-            ))}
-
-          </div>
+          <CardContent>
+            <Typography paragraph>{description}</Typography>
+          </CardContent>
         </CardContent>
-        <CardActions style={{ justifyContent: 'center' }}>
-          <Button
-            sx={{
-              width: '50%',
-              margin: '0 auto',
-              display: 'block',
-              backgroundColor: 'primary.main',
-              color: 'white',
-              borderRadius: '5px',
-              '&:hover': {
-                backgroundColor: 'white',
-                color: 'primary.main',
-              },
-            }}
-            onClick={() => onDetailsClick({ title, imageUrl, technologies })}
-          >
-            See Details
-          </Button>
-        </CardActions>
-      </Card>
-    </div>
-
+      </Collapse>
+    </Card>
   );
 }
 
@@ -84,6 +123,7 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.string.isRequired,
   onDetailsClick: PropTypes.func.isRequired,
 };
 
