@@ -45,7 +45,7 @@ function About({ id }) {
 
   const boxStyle = {
     p: 2,
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
     borderRadius: '10px',
     backgroundColor: '#ffffff',
     margin: '20px 0',
@@ -53,7 +53,7 @@ function About({ id }) {
 
   const boxStyle2 = {
     p: 2,
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
     borderRadius: '10px',
     backgroundColor: '#ffffff',
     margin: '20px 0',
@@ -83,8 +83,8 @@ function About({ id }) {
     <Box
       id={id}
       sx={{
-        px: 2,
-        pt: { xs: '17%', md: '8%' },
+        px: { xs: 1, md: 2 },
+        pt: { xs: '12%', md: '7%' },
         pb: '10%',
         backgroundColor: '#f0f0f0',
         justifyContent: 'center',

@@ -13,7 +13,7 @@ function Contact({ id }) {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        pt: { xs: '19%', md: '10%' },
+        pt: { xs: '19%', md: '8%' },
         pb: '5%',
         backgroundColor: '#d0d0d0',
       }}
@@ -25,6 +25,7 @@ function Contact({ id }) {
           padding: '2rem',
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
           borderRadius: '15px',
+          pt: { xs: 2, md: 6 },
         }}
       >
         <Typography

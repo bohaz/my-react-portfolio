@@ -44,8 +44,8 @@ function GreetingSection({ id }) {
   };
 
   const boxStyle = {
-    pl: { xs: '1rem', md: '2rem' },
-    pr: { xs: '1rem', md: '2rem' },
+    pl: { xs: 1, md: 4 },
+    pr: { xs: 1, md: 4 },
     paddingTop: '4%',
     paddingBottom: '10%',
   };
