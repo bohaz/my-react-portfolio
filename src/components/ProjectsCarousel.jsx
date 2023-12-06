@@ -1,17 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Slider from 'react-slick';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import ProjectCard from './ProjectCard';
 import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import './styles/Cards.css';
 import image128 from '../assets/24doctor.png';
 import transfrontImage from '../assets/Transact.png';
 import airappImage from '../assets/Airapp.png';
-import todoImage from '../assets/Todo.png';
 import rodeoImage from '../assets/Rodeo.png';
 import mathImage from '../assets/Math.png';
 import spaceImage from '../assets/Space.png';
@@ -29,44 +26,9 @@ function ProjectsCarousel({ id }) {
     setDialogOpen(false);
   };
 
-  const settings = {
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-        },
-      },
-    ],
-  };
-
   const projects = [
     {
-      title: '24-Hours Doctor',
+      title: 'Medica',
       description: '24hour doctor is a modern and dynamic web application designed to manage and display a directory of doctors and their reservations.',
       imageUrl: image128,
       technologies: ['Rails', 'React', 'Redux', 'CSS3'],
@@ -90,20 +52,12 @@ function ProjectsCarousel({ id }) {
       sourceUrl: 'https://github.com/bohaz/air-quality-monitoring-app',
     },
     {
-      title: "SPACE TRAVELER'S HUB",
+      title: "Space Traveler's Hub",
       description: 'Web Page connected with the real live data from the SpaceX API, to provide commercial and scientific space travel services, users can book rockets and join selected space missions.',
       imageUrl: spaceImage,
-      technologies: ['React', 'Redux', 'CSS3'],
+      technologies: ['React', 'Redux', 'CSS3', 'Bootstrap'],
       liveUrl: 'https://space-travelers-hub-g5v6.onrender.com',
       sourceUrl: 'https://github.com/bohaz/Space-Travelers-Hub',
-    },
-    {
-      title: 'To-do-list',
-      description: 'This is a minimalist to-do list that alows users to organize daily activities.',
-      imageUrl: todoImage,
-      technologies: ['React', 'Javascript', 'Bootstrap'],
-      liveUrl: 'https://todo-react-xktv.onrender.com/',
-      sourceUrl: 'https://github.com/bohaz/todo-react',
     },
     {
       title: 'Finals Rodeo',
@@ -124,52 +78,45 @@ function ProjectsCarousel({ id }) {
   ];
 
   const boxStyle = {
-    p: 2,
+    p: { xs: 1, md: 2 },
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
     borderRadius: '10px',
     backgroundColor: '#ffffff',
     margin: '20px 0',
+    pt: { xs: 2, md: 6 },
   };
 
   return (
-
     <Box
       id={id}
       sx={{
-        p: { xs: 2, md: 4 },
+        p: { xs: 1, md: 4 },
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: { xs: '14%', md: '5%' },
+        paddingTop: { xs: '12%', md: '5%' },
         backgroundColor: '#d0d0d0',
       }}
     >
       <Box sx={boxStyle}>
-        <h2
-          className="works-title my-recent-works with-underline"
-          style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif', color: '#104579' }}
-        >
+        <h2 className="works-title my-recent-works with-underline" style={{ textAlign: 'center', fontFamily: 'Poppins, sans-serif', color: '#104579' }}>
           <i className="fa-solid fa-briefcase" />
           {' '}
           Recent Projects
         </h2>
 
-        <Box sx={{ paddingBottom: '1%' }}>
-          {' '}
-          {/* Agrega este Box */}
-          <Slider {...settings}>
-            {projects.map((project) => (
-              <div key={project.title}>
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  technologies={project.technologies}
-                  onDetailsClick={() => handleDetailsClick(project)}
-                />
-              </div>
-            ))}
-          </Slider>
-        </Box>
+        <Grid container spacing={2} justifyContent="center">
+          {projects.map((project) => (
+            <Grid item key={project.title} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                technologies={project.technologies}
+                onDetailsClick={() => handleDetailsClick(project)}
+              />
+            </Grid>
+          ))}
+        </Grid>
 
         <ProjectDetailsDialog
           open={dialogOpen}
