@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import {
   Dialog, DialogTitle, DialogContent,
   DialogContentText, DialogActions, Button,
-  Slide, Chip, CardMedia, IconButton,
+  Slide, CardMedia, IconButton, Typography,
 } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Icon } from '@iconify/react';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
@@ -14,11 +16,21 @@ Transition.displayName = 'Transition';
 function ProjectDetailsDialog({ open, handleClose, project }) {
   const hasProjectData = project && project.title;
 
-  const chipStyle = {
-    borderRadius: '5px',
+  const technologyIcons = {
+    React: 'logos:react',
+    Redux: 'logos:redux',
+    Ruby: 'logos:ruby',
+    Bootstrap: 'logos:bootstrap',
+    CSS3: 'logos:css-3',
+    HTML: 'logos:html-5',
+    Javascript: 'logos:javascript',
+    Rails: 'logos:rails',
+  };
+
+  const titleStyle = {
+    fontFamily: 'Poppins, sans-serif',
     fontWeight: 'bold',
-    border: '#104579 solid 1px',
-    color: '#104579',
+    fontSize: '1.25rem',
   };
 
   return (
@@ -32,8 +44,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
     >
       {hasProjectData && (
         <>
-          <DialogTitle sx={{ color: ' #104579', fontSize: '1.2rem' }}>
-            {project.description}
+          <DialogTitle sx={{ color: '#104579', fontSize: '1.2rem' }}>
             <IconButton
               aria-label="close"
               onClick={handleClose}
@@ -46,7 +57,7 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
             >
               <FontAwesomeIcon icon={faRectangleXmark} />
             </IconButton>
-
+            <Typography style={titleStyle}>{project.title}</Typography>
           </DialogTitle>
           <DialogContent>
             <CardMedia
@@ -56,10 +67,11 @@ function ProjectDetailsDialog({ open, handleClose, project }) {
             />
             <DialogContentText id="project-details-description">
 
-              {project.technologies.map((tech) => (
-                <Chip key={tech} label={tech} variant="outlined" style={{ margin: '5px' }} sx={chipStyle} />
-              ))}
-
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {project.technologies.map((tech) => (
+                  <Icon key={tech} icon={technologyIcons[tech] || 'emojione:question-mark'} style={{ fontSize: '30px', margin: '5px' }} />
+                ))}
+              </div>
             </DialogContentText>
           </DialogContent>
           <DialogActions sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
