@@ -45,6 +45,8 @@ function ProjectCard({
     HTML: 'logos:html-5',
     Javascript: 'logos:javascript',
     Rails: 'logos:rails',
+    Material: 'logos:material-ui',
+    Tailwind: 'skill-icons:tailwindcss-dark',
   };
 
   const cardStyle = {
