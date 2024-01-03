@@ -32,7 +32,7 @@ function ProjectsCarousel({ id }) {
       title: 'Pet Fashion',
       description: 'Pet Fashion is our professional and dedicated pet grooming salon. As a software developer, I have created this web application not only as a digital portal for our services but also as a reflection of our commitment to innovation and excellence. This platform represents the fusion of my passion for technological development and pet care, offering our clients an intuitive, informative, and engaging user experience.',
       imageUrl: petfashionImage,
-      technologies: ['React', 'CSS3', 'Javascript', 'Tailwind'],
+      technologies: ['React', 'CSS3', 'Tailwind', 'Material'],
       liveUrl: 'https://petfashion.vercel.app',
       sourceUrl: 'https://github.com/bohaz/petfashion',
     },
