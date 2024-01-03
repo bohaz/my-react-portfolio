@@ -12,6 +12,7 @@ import airappImage from '../assets/Airapp.png';
 import rodeoImage from '../assets/Rodeo.png';
 import mathImage from '../assets/Math.png';
 import spaceImage from '../assets/Space.png';
+import petfashionImage from '../assets/Petfashion.png';
 
 function ProjectsCarousel({ id }) {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -27,6 +28,14 @@ function ProjectsCarousel({ id }) {
   };
 
   const projects = [
+    {
+      title: 'Pet Fashion',
+      description: 'PetFashion is a dedicated and professional pet grooming salon. Our web application serves as a digital gateway to our services, showcasing the quality and care we provide for your beloved pets.',
+      imageUrl: petfashionImage,
+      technologies: ['React', 'CSS3', 'Material-UI', 'Tailwind'],
+      liveUrl: 'https://petfashion.vercel.app',
+      sourceUrl: 'https://github.com/bohaz/petfashion',
+    },
     {
       title: 'Medica',
       description: '24hour doctor is a modern and dynamic web application designed to manage and display a directory of doctors and their reservations.',
