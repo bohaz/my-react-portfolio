@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -49,7 +48,7 @@ function ProjectsCarousel({ id }) {
       description: 'TransactTrends is a web application designed to help you manage and keep a detailed track of your financial transactions.',
       imageUrl: transfrontImage,
       technologies: ['Ruby', 'Rails', 'CSS3'],
-      liveUrl: 'https://transacttrends.onrender.com',
+      liveUrl: 'https://transactrends.onrender.com',
       sourceUrl: 'https://github.com/bohaz/Budget-app',
     },
     {
