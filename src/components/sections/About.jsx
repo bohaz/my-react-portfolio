@@ -76,6 +76,7 @@ function About({ id }) {
     { src: 'https://skillicons.dev/icons?i=figma', alt: 'Figma' },
     { src: 'https://skillicons.dev/icons?i=rails', alt: 'Rails' },
     { src: 'https://skillicons.dev/icons?i=postgresql', alt: 'Rails' },
+    { src: 'https://skillicons.dev/icons?i=postman', alt: 'Rails' },
   ];
 
   return (
