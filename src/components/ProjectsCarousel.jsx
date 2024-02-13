@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -6,7 +7,6 @@ import ProjectCard from './ProjectCard';
 import ProjectDetailsDialog from './pop-up/ProjectDetailsDialog';
 import './styles/Cards.css';
 import image128 from '../assets/24doctor.png';
-import transfrontImage from '../assets/Transact.png';
 import airappImage from '../assets/Airapp.png';
 import rodeoImage from '../assets/Rodeo.png';
 import mathImage from '../assets/Math.png';
@@ -43,14 +43,14 @@ function ProjectsCarousel({ id }) {
       liveUrl: 'https://two4hours-doctor-frontend.onrender.com/',
       sourceUrl: 'https://github.com/bohaz/24hour_doctor-front_end',
     },
-    {
+    /*  {
       title: 'TransactTrends',
       description: 'TransactTrends is a web application designed to help you manage and keep a detailed track of your financial transactions.',
       imageUrl: transfrontImage,
       technologies: ['Ruby', 'Rails', 'CSS3'],
       liveUrl: 'https://transactrends.onrender.com',
       sourceUrl: 'https://github.com/bohaz/Budget-app',
-    },
+    }, */
     {
       title: 'Air Quality Monitoring App',
       description: 'Air Quality Monitoring App is an intuitive single Page Application (SPA) displaying real-time air pollution levels across Venezuelan states.',
